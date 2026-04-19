@@ -86,6 +86,12 @@ body{
   content:'⌃';
   opacity:.9;
 }
+.cat-desc{
+  font-size:12px;
+  line-height:1.4;
+  color:var(--muted);
+  padding:0 4px 2px;
+}
 
 .panel{
   display:none;
@@ -182,6 +188,7 @@ body{
 
   <div class="column">
     <button class="cat-toggle active" data-target="elmelet">ELMÉLET<br>&nbsp;</button>
+    <div class="cat-desc">A disszertáció bevezető és elméleti fejezetei.</div>
     <div class="panel open" id="elmelet">
 
       <a class="item" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -214,6 +221,7 @@ body{
 
   <div class="column">
     <button class="cat-toggle active" data-target="leirasok">MŰVÉSZKÖNYV-<br>LEÍRÁSOK</button>
+    <div class="cat-desc">Esettanulmányok és a leírási szempontok dokumentumai.</div>
     <div class="panel open" id="leirasok">
 
       <a class="item" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -236,6 +244,7 @@ body{
 
   <div class="column">
     <button class="cat-toggle" data-target="modell">MODELL<br>&nbsp;</button>
+    <div class="cat-desc">A modell szerkezete, mezőlistái, mappingjei és terminológiai elemei.</div>
     <div class="panel" id="modell">
 
       <div class="item item-brief">
@@ -267,6 +276,7 @@ body{
 
   <div class="column">
     <button class="cat-toggle" data-target="ontologia">ONTOLÓGIA<br>&nbsp;</button>
+    <div class="cat-desc">Szótárakhoz és ontológiai kapcsolatokhoz tartozó anyagok.</div>
     <div class="panel" id="ontologia">
 
       <a class="item" href="#" onclick="return false;">
@@ -284,12 +294,14 @@ body{
 
   <div class="column">
     <button class="cat-toggle" data-target="bibliografia">BIBLIOGRÁFIA<br>&nbsp;</button>
+    <div class="cat-desc">A kutatáshoz kapcsolódó publikációk és bibliográfiai tételek.</div>
     <div class="panel biblio-panel" id="bibliografia">
       <div id="zotero-items"></div>
     </div>
 
     <button class="cat-toggle" data-target="etc">ETC<br>&nbsp;</button>
-<div class="panel" id="etc">
+    <div class="cat-desc">Intézményi linkek, kapcsolat és szakmai önéletrajz.</div>
+    <div class="panel" id="etc">
       <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer">
         <div class="item-title">MOME könyvtár</div>
         <div class="meta-row"><div class="label">LINK</div></div>
