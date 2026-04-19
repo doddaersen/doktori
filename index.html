@@ -125,6 +125,8 @@ body{
 }
 .item-brief .item-title{
   font-weight:400;
+  line-height:1.45;
+  text-wrap:pretty;
 }
 
 .item-title{
@@ -237,7 +239,7 @@ body{
     <div class="panel" id="modell">
 
       <div class="item item-brief">
-        <div class="item-title">A modellhez feltöltött dokumentumok azt a struktúrát mutatják meg, amelyben a művek adatai, a formai és technikai jellemzők, valamint ezek kapcsolatai rendszerré rendeződnek. A cél ezeknek a fogalmi elemeknek, szótáraknak és mappingeknek az áttekinthető megjelenítése.</div>
+        <div class="item-title">A modellhez feltöltött dokumentumok azt a struktúrát mutatják meg, amelyben a művek adatai, a formai és technikai jellemzők, valamint ezek kapcsolatai rendszerré rendeződnek.<br><br>A cél ezeknek a fogalmi elemeknek, szótáraknak és mappingeknek az áttekinthető megjelenítése.</div>
       </div>
 
       <a class="item" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit" target="_blank" rel="noopener noreferrer">
@@ -284,6 +286,24 @@ body{
     <button class="cat-toggle" data-target="bibliografia">BIBLIOGRÁFIA<br>&nbsp;</button>
     <div class="panel biblio-panel" id="bibliografia">
       <div id="zotero-items"></div>
+    </div>
+
+    <button class="cat-toggle active" data-target="etc">ETC<br>&nbsp;</button>
+    <div class="panel open" id="etc">
+      <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer">
+        <div class="item-title">MOME könyvtár</div>
+        <div class="meta-row"><div class="label">LINK</div></div>
+      </a>
+
+      <a class="item" href="mailto:dkun@mome.hu" target="_blank" rel="noopener noreferrer">
+        <div class="item-title">Kontakt</div>
+        <div class="meta-row"><div class="label">EMAIL</div></div>
+      </a>
+
+      <a class="item" href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+        <div class="item-title">CV</div>
+        <div class="meta-row"><div class="label">DOC</div></div>
+      </a>
     </div>
   </div>
 
