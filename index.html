@@ -14,6 +14,10 @@
   --border:#ead8e8;
   --card:#ffffff;
   --radius:8px;
+  --btn-dark:#4a2836;
+  --btn-dark-2:#5a3444;
+  --btn-soft:#d8b9d8;
+  --btn-peach:#f1b7a4;
 }
 *{box-sizing:border-box}
 body{
@@ -41,9 +45,9 @@ body{
 
 .cat-toggle{
   appearance:none;
-  border:1px solid var(--border);
-  background:#fff;
-  border-radius:var(--radius);
+  border:1px solid rgba(74,40,54,.22);
+  background:var(--btn-dark);
+  border-radius:26px;
   padding:0 0 18px;
   cursor:pointer;
   transition:.15s;
@@ -61,15 +65,14 @@ body{
   right:0;
   bottom:0;
   height:18px;
-  background:var(--magenta);
+  background:var(--btn-dark-2);
 }
 .cat-toggle:hover{
-  border-color:var(--magenta);
   transform:translateY(-1px);
+  box-shadow:0 8px 18px rgba(74,40,54,.12);
 }
 .cat-toggle.active{
-  border-color:var(--magenta);
-  box-shadow:0 0 0 1px var(--magenta) inset;
+  box-shadow:0 0 0 1px rgba(74,40,54,.18) inset, 0 8px 18px rgba(74,40,54,.10);
 }
 .cat-toggle::after{
   content:'⌄';
@@ -78,7 +81,7 @@ body{
   transform:translateX(-50%);
   bottom:1px;
   font-size:16px;
-  color:#fff;
+  color:var(--btn-peach);
   opacity:.95;
   line-height:1;
   width:100%;
@@ -86,7 +89,7 @@ body{
 }
 .cat-toggle.active::after{
   content:'⌃';
-  color:#fff;
+  color:var(--btn-peach);
   opacity:.95;
 }
 .cat-main{
@@ -96,9 +99,9 @@ body{
   text-align:center;
   min-height:58px;
   padding:12px 10px;
-  background:var(--magenta);
-  color:#fff;
-  font-weight:600;
+  background:var(--btn-dark);
+  color:var(--btn-peach);
+  font-weight:700;
   text-transform:uppercase;
   letter-spacing:.08em;
   font-size:24px;
@@ -110,14 +113,16 @@ body{
   justify-content:center;
   text-align:center;
   flex:1;
+  margin:0 10px;
+  border-radius:18px;
   padding:10px 12px 12px;
   font-size:12px;
   line-height:1.35;
-  font-weight:400;
+  font-weight:500;
   letter-spacing:0;
   text-transform:none;
-  color:var(--muted);
-  background:#fff;
+  color:var(--btn-dark);
+  background:var(--btn-soft);
 }
 
 .panel{
@@ -266,6 +271,9 @@ body{
   <div class="column">
     <button class="cat-toggle active" data-target="leirasok"><span class="cat-main">MŰVÉSZKÖNYV-<br>LEÍRÁSOK</span><span class="cat-sub">Esettanulmányok és a leírási szempontok dokumentumai.</span></button>
     <div class="panel open" id="leirasok">
+      <div class="item item-brief">
+        <div class="item-title">A fejezet a leírás módszertani kereteit, a kategorizálás problémáit és a vizsgálati szempontok alkalmazását rendezi egységes rendszerbe.</div>
+      </div>
 
       <a class="item" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">5.1 Vizsgálati szempontok</div>
