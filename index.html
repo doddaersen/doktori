@@ -44,41 +44,32 @@ body{
   border:1px solid var(--border);
   background:#fff;
   border-radius:var(--radius);
-  padding:14px 10px 30px;
-  font-weight:600;
-  text-align:center;
+  padding:0 0 24px;
   cursor:pointer;
   transition:.15s;
-  color:var(--text);
-  text-transform:uppercase;
-  letter-spacing:.08em;
-  font-size:24px;
-  line-height:1.05;
-  height:132px;
-  display:flex;
-  flex-direction:column;
-  align-items:center;
-  justify-content:center;
-  gap:10px;
   width:100%;
   position:relative;
+  overflow:hidden;
+  height:140px;
+  display:flex;
+  flex-direction:column;
 }
 .cat-toggle:hover{
   border-color:var(--magenta);
-  color:var(--magenta);
+  transform:translateY(-1px);
 }
 .cat-toggle.active{
-  background:var(--magenta);
   border-color:var(--magenta);
-  color:#fff;
+  box-shadow:0 0 0 1px var(--magenta) inset;
 }
 .cat-toggle::after{
   content:'⌄';
   position:absolute;
   left:50%;
   transform:translateX(-50%);
-  bottom:8px;
+  bottom:6px;
   font-size:18px;
+  color:var(--muted);
   opacity:.75;
   line-height:1;
   width:100%;
@@ -86,26 +77,38 @@ body{
 }
 .cat-toggle.active::after{
   content:'⌃';
-  opacity:.9;
+  color:var(--magenta);
+  opacity:.95;
 }
 .cat-main{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  min-height:58px;
+  padding:12px 10px;
+  background:var(--magenta);
+  color:#fff;
+  font-weight:600;
+  text-transform:uppercase;
+  letter-spacing:.08em;
+  font-size:24px;
+  line-height:1.05;
 }
 .cat-sub{
-  display:block;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  flex:1;
+  padding:10px 12px 12px;
   font-size:12px;
   line-height:1.35;
   font-weight:400;
   letter-spacing:0;
   text-transform:none;
   color:var(--muted);
-  max-width:95%;
-}
-.cat-toggle:hover .cat-sub{
-  color:var(--magenta);
-}
-.cat-toggle.active .cat-sub{
-  color:rgba(255,255,255,.88);
+  background:#fff;
 }
 
 .panel{
@@ -119,8 +122,9 @@ body{
   display:block;
 }
 .panel.biblio-panel{
-  max-height:560px;
-  overflow:auto;
+  height:560px;
+  overflow-y:auto;
+  overflow-x:hidden;
 }
 
 .item{
@@ -183,6 +187,22 @@ body{
   letter-spacing:.04em;
   text-transform:uppercase;
 }
+.inline-links{
+  display:flex;
+  gap:12px;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.inline-links a{
+  font-size:11px;
+  color:var(--muted);
+  letter-spacing:.04em;
+  text-transform:uppercase;
+  text-decoration:none;
+}
+.inline-links a:hover{
+  color:var(--magenta);
+}
 
 @media (max-width:1200px){
   .matrix{grid-template-columns:repeat(3,minmax(220px,1fr))}
@@ -193,7 +213,7 @@ body{
 }
 @media (max-width:560px){
   .matrix{grid-template-columns:1fr}
-  .cat-toggle{height:auto;min-height:132px}
+  .cat-toggle{height:auto;min-height:140px}
 }
 </style>
 </head>
@@ -312,19 +332,19 @@ body{
 
     <button class="cat-toggle" data-target="etc"><span class="cat-main">ETC</span><span class="cat-sub">Intézményi linkek, kapcsolat és szakmai önéletrajz.</span></button>
     <div class="panel" id="etc">
+      <div class="item">
+        <div class="item-title">Kun Dorottya</div>
+        <div class="meta-row spread">
+          <div class="inline-links">
+            <a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a>
+            <a href="mailto:dkun@mome.hu">Kontakt</a>
+          </div>
+        </div>
+      </div>
+
       <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">MOME könyvtár</div>
+        <div class="item-title">MOME Könyvtár</div>
         <div class="meta-row"><div class="label">LINK</div></div>
-      </a>
-
-      <a class="item" href="mailto:dkun@mome.hu" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">Kontakt</div>
-        <div class="meta-row"><div class="label">EMAIL</div></div>
-      </a>
-
-      <a class="item" href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">CV</div>
-        <div class="meta-row"><div class="label">DOC</div></div>
       </a>
     </div>
   </div>
@@ -346,7 +366,7 @@ buttons.forEach(button => {
 });
 
 const zoteroContainer = document.getElementById('zotero-items');
-const zoteroFeedUrl = 'https://api.zotero.org/groups/6253421/collections/GRCKZZZV/items/top?direction=asc&format=atom&sort=title';
+const zoteroFeedUrl = 'https://api.zotero.org/groups/6253421/collections/GRCKZZZV/items/top?direction=asc&format=atom&sort=title&limit=100';
 
 async function loadZoteroItems() {
   if (!zoteroContainer) return;
