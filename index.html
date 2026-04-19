@@ -44,7 +44,7 @@ body{
   border:1px solid var(--border);
   background:#fff;
   border-radius:var(--radius);
-  padding:16px 10px 28px;
+  padding:14px 10px 30px;
   font-weight:600;
   text-align:center;
   cursor:pointer;
@@ -54,10 +54,12 @@ body{
   letter-spacing:.08em;
   font-size:24px;
   line-height:1.05;
-  min-height:96px;
+  min-height:118px;
   display:flex;
+  flex-direction:column;
   align-items:center;
   justify-content:center;
+  gap:10px;
   width:100%;
   position:relative;
 }
@@ -86,11 +88,24 @@ body{
   content:'⌃';
   opacity:.9;
 }
-.cat-desc{
+.cat-main{
+  display:block;
+}
+.cat-sub{
+  display:block;
   font-size:12px;
-  line-height:1.4;
+  line-height:1.35;
+  font-weight:400;
+  letter-spacing:0;
+  text-transform:none;
   color:var(--muted);
-  padding:0 4px 2px;
+  max-width:95%;
+}
+.cat-toggle:hover .cat-sub{
+  color:var(--magenta);
+}
+.cat-toggle.active .cat-sub{
+  color:rgba(255,255,255,.88);
 }
 
 .panel{
@@ -187,8 +202,7 @@ body{
 <div class="matrix">
 
   <div class="column">
-    <button class="cat-toggle active" data-target="elmelet">ELMÉLET<br>&nbsp;</button>
-    <div class="cat-desc">A disszertáció bevezető és elméleti fejezetei.</div>
+    <button class="cat-toggle active" data-target="elmelet"><span class="cat-main">ELMÉLET</span><span class="cat-sub">A disszertáció bevezető és elméleti fejezetei.</span></button>
     <div class="panel open" id="elmelet">
 
       <a class="item" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -220,8 +234,7 @@ body{
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="leirasok">MŰVÉSZKÖNYV-<br>LEÍRÁSOK</button>
-    <div class="cat-desc">Esettanulmányok és a leírási szempontok dokumentumai.</div>
+    <button class="cat-toggle active" data-target="leirasok"><span class="cat-main">MŰVÉSZKÖNYV-<br>LEÍRÁSOK</span><span class="cat-sub">Esettanulmányok és a leírási szempontok dokumentumai.</span></button>
     <div class="panel open" id="leirasok">
 
       <a class="item" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
@@ -243,8 +256,7 @@ body{
   </div>
 
   <div class="column">
-    <button class="cat-toggle" data-target="modell">MODELL<br>&nbsp;</button>
-    <div class="cat-desc">A modell szerkezete, mezőlistái, mappingjei és terminológiai elemei.</div>
+    <button class="cat-toggle" data-target="modell"><span class="cat-main">MODELL</span><span class="cat-sub">A modell szerkezete, mezőlistái, mappingjei és terminológiai elemei.</span></button>
     <div class="panel" id="modell">
 
       <div class="item item-brief">
@@ -275,8 +287,7 @@ body{
   </div>
 
   <div class="column">
-    <button class="cat-toggle" data-target="ontologia">ONTOLÓGIA<br>&nbsp;</button>
-    <div class="cat-desc">Szótárakhoz és ontológiai kapcsolatokhoz tartozó anyagok.</div>
+    <button class="cat-toggle" data-target="ontologia"><span class="cat-main">ONTOLÓGIA</span><span class="cat-sub">Szótárakhoz és ontológiai kapcsolatokhoz tartozó anyagok.</span></button>
     <div class="panel" id="ontologia">
 
       <a class="item" href="#" onclick="return false;">
@@ -293,14 +304,12 @@ body{
   </div>
 
   <div class="column">
-    <button class="cat-toggle" data-target="bibliografia">BIBLIOGRÁFIA<br>&nbsp;</button>
-    <div class="cat-desc">A kutatáshoz kapcsolódó publikációk és bibliográfiai tételek.</div>
+    <button class="cat-toggle" data-target="bibliografia"><span class="cat-main">BIBLIOGRÁFIA</span><span class="cat-sub">A kutatáshoz kapcsolódó publikációk és bibliográfiai tételek.</span></button>
     <div class="panel biblio-panel" id="bibliografia">
       <div id="zotero-items"></div>
     </div>
 
-    <button class="cat-toggle" data-target="etc">ETC<br>&nbsp;</button>
-    <div class="cat-desc">Intézményi linkek, kapcsolat és szakmai önéletrajz.</div>
+    <button class="cat-toggle" data-target="etc"><span class="cat-main">ETC</span><span class="cat-sub">Intézményi linkek, kapcsolat és szakmai önéletrajz.</span></button>
     <div class="panel" id="etc">
       <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer">
         <div class="item-title">MOME könyvtár</div>
