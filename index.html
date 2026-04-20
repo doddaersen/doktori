@@ -187,33 +187,30 @@ fetch('status.json')
   .catch(() => {});
 
 const zoteroContainer = document.getElementById('zotero-items');
-const zoteroFeedUrl = 'https://api.zotero.org/groups/6253421/collections/GRCKZZZV/items/top?direction=asc&format=atom&sort=title&limit=100';
 async function loadZoteroItems() {
   if (!zoteroContainer) return;
   zoteroContainer.innerHTML = '<div class="label">Betöltés…</div>';
   try {
-    const response = await fetch(zoteroFeedUrl);
-    const xmlText = await response.text();
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(xmlText, 'application/xml');
-    const entries = Array.from(xml.querySelectorAll('entry'));
+    const response = await fetch('zotero.json');
+    if (!response.ok) throw new Error('zotero.json not found');
+    const items = await response.json();
     const fragment = document.createDocumentFragment();
-    entries.forEach(entry => {
-      const title = entry.querySelector('title')?.textContent?.trim() || 'Cím nélkül';
-      const altLink = Array.from(entry.querySelectorAll('link')).find(l => l.getAttribute('rel') === 'alternate');
-      const href = altLink?.getAttribute('href') || zoteroFeedUrl;
+    items.forEach(entry => {
+      const title = entry.title || 'Cím nélkül';
+      const href = entry.url || '#';
+      const type = (entry.type || 'PUBLIKÁCIÓ').toUpperCase();
       const item = document.createElement('a');
       item.className = 'item';
       item.href = href;
       item.target = '_blank';
       item.rel = 'noopener noreferrer';
-      item.innerHTML = `<div class="item-head"><div class="item-title-wrap"><div class="item-title">${title}</div></div><span class="item-linkout">↗</span></div><div class="meta-row"><div class="label">PUBLIKÁCIÓ</div></div>`;
+      item.innerHTML = `<div class="item-head"><div class="item-title-wrap"><div class="item-title">${title}</div></div><span class="item-linkout">↗</span></div><div class="meta-row"><div class="label">${type}</div></div>`;
       fragment.appendChild(item);
     });
     zoteroContainer.innerHTML = '';
     zoteroContainer.appendChild(fragment);
   } catch (error) {
-    zoteroContainer.innerHTML = `<a class="item" href="${zoteroFeedUrl}" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Zotero bibliográfia</div></div><span class="item-linkout">↗</span></div><div class="meta-row"><div class="label">PUBLIKÁCIÓ</div></div></a>`;
+    zoteroContainer.innerHTML = `<div class="item"><div class="item-title">A bibliográfia most nem tölthető be.</div><div class="meta-row"><div class="label">JSON HIBA</div></div></div>`;
   }
 }
 loadZoteroItems();
