@@ -13,7 +13,7 @@
     ]
   },
   "vizsgalati_szempontok": {
-    "status": "Fejezet írása"
+    "status": "Szerkesztés alatt"
   },
   "leiras_nehezsegei": {
     "status": "Fejezet írása"
@@ -28,9 +28,36 @@
     "status": "Témavezetői ellenőrzés"
   },
   "ontologiai_mapping": {
-    "status": "Források ellenőrzése"
+    "status": "Témavezetői ellenőrzés"
   },
   "terminologiai_szotar": {
     "status": "Témavezetői ellenőrzés"
+  },
+  "ontologia_fejezet": {
+    "status": "Szerkesztés alatt"
+  },
+  "szotarak_xls": {
+    "status": "Témavezetői ellenőrzés"
+  },
+  "bibl_2": {
+    "status": "Források ellenőrzése"
+  },
+  "bibl_3": {
+    "status": "Szerkesztés alatt"
+  },
+  "bibl_4": {
+    "status": "Szerkesztés alatt"
+  },
+  "bibl_5": {
+    "status": "Szerkesztés alatt"
+  },
+  "bibl_6": {
+    "status": "Szerkesztés alatt"
+  },
+  "bibl_7": {
+    "status": "Fejezet írása"
+  },
+  "keplista": {
+    "status": "Szerkesztés alatt"
   }
 }
