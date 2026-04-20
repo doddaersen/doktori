@@ -1,0 +1,625 @@
+[
+  {
+    "title": "MOKKA-ODR katalógus",
+    "url": "https://mokka.hu/web/guest",
+    "description": "Országos könyvtári adatbázis, amely összegyűjti a magyar könyvtárak bibliográfiai adatait, így egy helyen kereshető, mely intézményekben milyen dokumentumok érhetők el. A rendszer segítségével könnyen azonosítható, hogy egy adott könyv vagy kiadvány mely könyvtárban található meg, és szükség esetén könyvtárközi kölcsönzés útján is kérhető más intézményből.",
+    "keywords": [
+      "könyv",
+      "közös katalógus",
+      "könyvtárközi kölcsönzéshez",
+      "magyar",
+      "kutatástámogató"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Magyar Elektronikus Könyvtár (MEK)",
+    "url": "https://mek.oszk.hu/hu/",
+    "description": "Digitálisan ingyenesen hozzáférhető több ezer magyar nyelvű könyv, tanulmány, cikk és egyéb dokumentum a tudomány, kultúra és művészet különböző területeiről.",
+    "keywords": [
+      "e-könyv",
+      "fulltext",
+      "open access",
+      "magyar"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Elektronikus Periodika Archívum és Adatbázis (EPA)",
+    "url": "https://epa.oszk.hu/",
+    "description": "Magyar e-folyóiratok és egyéb digitális időszaki kiadványok nyilvántartása és gyűjteménye.",
+    "keywords": [
+      "adatbázis",
+      "folyóirat",
+      "fulltext",
+      "magyar",
+      "kutatástámogató"
+    ],
+    "language": "hun",
+    "year": "2006",
+    "type": "ELEC"
+  },
+  {
+    "title": "MeRSZ - Akadémiai Kiadó",
+    "url": "https://mersz.hu/",
+    "description": "Magyar Elektronikus Referenciamű Szolgáltatás) az Akadémiai Kiadó online okoskönyvtára, amely közel ezer magyar nyelvű kézikönyvet, szakkönyvet, felsőoktatási tankönyvet, jegyzetet tartalmaz a legkülönbözőbb tudományterületekről – a biológiától a zenetudományig –, teljes szöveggel, kereshető, jegyzetelhető, hivatkozható formában.",
+    "keywords": [
+      "folyóirat",
+      "előfizetett",
+      "fulltext",
+      "magyar"
+    ],
+    "language": "hu",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "SJR : Scientific Journal Rankings",
+    "url": "https://www.scimagojr.com/",
+    "description": "Olyan bibliometriai adatbázis, amely a tudományos folyóiratokat és országokat értékeli hivatkozási mutatóik alapján, ezáltal lehetővé téve a hallgatók számára a releváns és magas hatású lapok azonosítását kutatási és publikációs célokra.",
+    "keywords": [
+      "adatbázis",
+      "folyóirat",
+      "bibliometria",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "DOAJ: Directory of Open Access Journals",
+    "url": "https://doaj.org/",
+    "description": "Nyílt hozzáférésű, lektorált tudományos folyóiratok nemzetközi gyűjteménye.",
+    "keywords": [
+      "open access",
+      "folyóirat",
+      "angol",
+      "kutatástámogató"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "EBSCO Discovery Service",
+    "url": "https://research-ebsco-com.ezproxy.mome.hu/c/ff2tzg/search?db=edspub",
+    "description": "Egységes keresőfelület, amely egyszerre teszi kereshetővé a könyvtár előfizetett és nyílt hozzáférésű adatbázisait, e-folyóiratait, e-könyveit és egyéb tudományos forrásait.",
+    "keywords": [
+      "discovery",
+      "adatbázis",
+      "fulltext",
+      "előfizetett",
+      "angol",
+      "kutatástámogató"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "EBSCO databases",
+    "url": "https://search.ebscohost.com/",
+    "description": "Több száz tudományos adatbázist magában foglaló platform, amely folyóiratcikkekhez, e-könyvekhez, referenciaművekhez és más kutatási anyagokhoz biztosít hozzáférést különböző szakterületeken.",
+    "keywords": [
+      "adatbázis",
+      "előfizetett",
+      "angol",
+      "kutatástámogató"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Google Scholar",
+    "url": "https://scholar.google.com/",
+    "description": "Széles körű tudományos kereső, amely cikkeket, könyveket, értekezéseket és egyéb tudományos anyagokat tesz kereshetővé.",
+    "keywords": [
+      "kereső",
+      "tudományos",
+      "angol",
+      "kutatástámogató"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "JSTOR",
+    "url": "https://www.jstor.org/",
+    "description": "Digitális tudományos archívum, amely folyóiratokat, könyveket és elsődleges forrásokat kínál számos tudományterületen.",
+    "keywords": [
+      "archívum",
+      "folyóirat",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "MUSE",
+    "url": "https://muse.jhu.edu/",
+    "description": "Bölcsészet- és társadalomtudományi folyóiratok és könyvek teljes szövegű online gyűjteménye.",
+    "keywords": [
+      "bölcsészet",
+      "társadalomtudomány",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "ProQuest",
+    "url": "https://www.proquest.com/",
+    "description": "Tudományos cikkek, disszertációk, újságok és egyéb források széles körű adatbázisplatformja.",
+    "keywords": [
+      "adatbázis",
+      "disszertáció",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "ScienceDirect",
+    "url": "https://www.sciencedirect.com/",
+    "description": "Elsevier platform több ezer tudományos folyóirattal és könyvvel, különösen természettudományos, műszaki és orvosi területen.",
+    "keywords": [
+      "adatbázis",
+      "folyóirat",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Scopus",
+    "url": "https://www.scopus.com/",
+    "description": "Absztrakt- és idézettségi adatbázis tudományos irodalomhoz, elemzési és bibliometriai funkciókkal.",
+    "keywords": [
+      "bibliometria",
+      "idézettség",
+      "adatbázis",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Web of Science",
+    "url": "https://www.webofscience.com/",
+    "description": "Nemzetközi hivatkozási adatbázis tudományos cikkek és idézettségi kapcsolatok feltárásához.",
+    "keywords": [
+      "idézettség",
+      "bibliometria",
+      "adatbázis",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Art & Architecture Source",
+    "url": "https://research-ebsco-com.ezproxy.mome.hu/c/ff2tzg/search?db=asu",
+    "description": "Művészeti és építészeti témájú adatbázis folyóiratcikkekkel, képekkel és egyéb szakmai tartalmakkal.",
+    "keywords": [
+      "művészet",
+      "építészet",
+      "adatbázis",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "ARTbibliographies Modern",
+    "url": "https://research-ebsco-com.ezproxy.mome.hu/c/ff2tzg/search?db=asu",
+    "description": "Kortárs művészet, fotográfia és design bibliográfiai adatbázisa.",
+    "keywords": [
+      "művészet",
+      "bibliográfia",
+      "design",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Avery Index to Architectural Periodicals",
+    "url": "https://research-ebsco-com.ezproxy.mome.hu/c/ff2tzg/search?db=asu",
+    "description": "Építészeti és urbanisztikai folyóiratok bibliográfiai indexe.",
+    "keywords": [
+      "építészet",
+      "bibliográfia",
+      "adatbázis",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Design and Applied Arts Index (DAAI)",
+    "url": "https://research-ebsco-com.ezproxy.mome.hu/c/ff2tzg/search?db=asu",
+    "description": "Design- és iparművészeti szakirodalom bibliográfiai adatbázisa.",
+    "keywords": [
+      "design",
+      "iparművészet",
+      "bibliográfia",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Film & Television Literature Index with Full Text",
+    "url": "https://research-ebsco-com.ezproxy.mome.hu/c/ff2tzg/search?db=asu",
+    "description": "Filmes és televíziós szakirodalom adatbázisa bibliográfiai és teljes szövegű tartalmakkal.",
+    "keywords": [
+      "film",
+      "televízió",
+      "adatbázis",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Communication Source",
+    "url": "https://research-ebsco-com.ezproxy.mome.hu/c/ff2tzg/search?db=asu",
+    "description": "Kommunikáció- és médiatudományi szakirodalom adatbázisa.",
+    "keywords": [
+      "kommunikáció",
+      "médiatudomány",
+      "adatbázis",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "ERIC",
+    "url": "https://eric.ed.gov/",
+    "description": "Oktatástudományi adatbázis cikkekkel, jelentésekkel és egyéb kutatási anyagokkal.",
+    "keywords": [
+      "oktatástudomány",
+      "adatbázis",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Europeana",
+    "url": "https://www.europeana.eu/",
+    "description": "Európai múzeumok, könyvtárak és levéltárak digitalizált kulturális örökségi anyagainak közös portálja.",
+    "keywords": [
+      "digitális gyűjtemény",
+      "kulturális örökség",
+      "európai",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Hungaricana",
+    "url": "https://hungaricana.hu/",
+    "description": "Magyar közgyűjtemények digitalizált tartalmainak portálja levéltári, könyvtári és muzeális anyagokkal.",
+    "keywords": [
+      "digitális gyűjtemény",
+      "magyar",
+      "kulturális örökség"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Arcanum Digitális Tudománytár",
+    "url": "https://adt.arcanum.com/",
+    "description": "Magyar folyóiratok, napilapok és tudományos kiadványok teljes szövegű digitális gyűjteménye.",
+    "keywords": [
+      "digitális gyűjtemény",
+      "fulltext",
+      "magyar",
+      "előfizetett"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "JSTOR Open Community Collections",
+    "url": "https://www.jstor.org/open/",
+    "description": "Nyílt hozzáférésű digitális gyűjtemények a JSTOR felületén.",
+    "keywords": [
+      "open access",
+      "digitális gyűjtemény",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "OpenAlex",
+    "url": "https://openalex.org/",
+    "description": "Nyílt tudományos metaadatbázis publikációk, szerzők, intézmények és témák feltárásához.",
+    "keywords": [
+      "metaadat",
+      "open access",
+      "angol",
+      "kutatástámogató"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "CORE",
+    "url": "https://core.ac.uk/",
+    "description": "Nyílt hozzáférésű tudományos publikációk aggregátora repozitóriumokból és folyóiratokból.",
+    "keywords": [
+      "open access",
+      "repozitórium",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "BASE",
+    "url": "https://www.base-search.net/",
+    "description": "Bielefeld Academic Search Engine, amely repozitóriumok és nyílt tudományos források keresője.",
+    "keywords": [
+      "kereső",
+      "repozitórium",
+      "open access",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Zenodo",
+    "url": "https://zenodo.org/",
+    "description": "Nyílt repozitórium publikációk, adatok, szoftverek és egyéb kutatási outputok számára.",
+    "keywords": [
+      "repozitórium",
+      "open access",
+      "kutatási adatok",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Figshare",
+    "url": "https://figshare.com/",
+    "description": "Kutatási adatok és más kutatási outputok megosztására szolgáló platform.",
+    "keywords": [
+      "kutatási adatok",
+      "repozitórium",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "DART-Europe E-theses Portal",
+    "url": "https://www.dart-europe.org/",
+    "description": "Európai doktori disszertációk közös keresője.",
+    "keywords": [
+      "disszertáció",
+      "európai",
+      "kereső",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "PQDT Open",
+    "url": "https://pqdtopen.proquest.com/",
+    "description": "Nyílt hozzáférésű disszertációk és értekezések keresője.",
+    "keywords": [
+      "disszertáció",
+      "open access",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "OpenDOAR",
+    "url": "https://v2.sherpa.ac.uk/opendoar/",
+    "description": "Nyílt repozitóriumok nemzetközi jegyzéke.",
+    "keywords": [
+      "repozitórium",
+      "jegyzék",
+      "open access",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "WorldCat",
+    "url": "https://search.worldcat.org/",
+    "description": "Nemzetközi közös katalógus könyvtári rekordok és lelőhelyadatok keresésére.",
+    "keywords": [
+      "közös katalógus",
+      "könyvtár",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Directory of Open Access Books (DOAB)",
+    "url": "https://www.doabooks.org/",
+    "description": "Nyílt hozzáférésű tudományos könyvek nemzetközi gyűjteménye.",
+    "keywords": [
+      "open access",
+      "e-könyv",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Oxford Art Online / Grove Art",
+    "url": "https://www.oxfordartonline.com/",
+    "description": "Művészettörténeti referenciatartalmak és lexikonok online platformja.",
+    "keywords": [
+      "művészettörténet",
+      "referencia",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Statista",
+    "url": "https://www.statista.com/",
+    "description": "Statisztikai adatok és piackutatási jelentések platformja.",
+    "keywords": [
+      "statisztika",
+      "piackutatás",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "SpringerLink",
+    "url": "https://link.springer.com/",
+    "description": "Tudományos könyvek és folyóiratok platformja több tudományterületen.",
+    "keywords": [
+      "folyóirat",
+      "e-könyv",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Taylor & Francis Online",
+    "url": "https://www.tandfonline.com/",
+    "description": "Tudományos folyóiratok platformja a humán- és társadalomtudományoktól a műszaki területekig.",
+    "keywords": [
+      "folyóirat",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Wiley Online Library",
+    "url": "https://onlinelibrary.wiley.com/",
+    "description": "Tudományos folyóiratok és könyvek online gyűjteménye.",
+    "keywords": [
+      "folyóirat",
+      "e-könyv",
+      "előfizetett",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Directory of Open Access Repositories",
+    "url": "https://v2.sherpa.ac.uk/opendoar/",
+    "description": "Nyílt repozitóriumok kereshető nemzetközi jegyzéke.",
+    "keywords": [
+      "repozitórium",
+      "open access",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "OpenAIRE",
+    "url": "https://explore.openaire.eu/",
+    "description": "Európai nyílt tudományos publikációk, adatok és projektek keresőfelülete.",
+    "keywords": [
+      "open science",
+      "open access",
+      "európai",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Semantic Scholar",
+    "url": "https://www.semanticscholar.org/",
+    "description": "Tudományos kereső mesterséges intelligencia alapú ajánlásokkal és kapcsolódó irodalomfeltárással.",
+    "keywords": [
+      "kereső",
+      "tudományos",
+      "AI",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  },
+  {
+    "title": "Lens.org",
+    "url": "https://www.lens.org/",
+    "description": "Publikációk és szabadalmak együttes keresésére alkalmas nyílt platform.",
+    "keywords": [
+      "publikáció",
+      "szabadalom",
+      "angol"
+    ],
+    "language": "",
+    "year": "",
+    "type": "ELEC"
+  }
+]
