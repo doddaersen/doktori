@@ -1,0 +1,36 @@
+{
+  "tartalomjegyzek": {
+    "status": "Szerkesztés alatt"
+  },
+  "bevezetes": {
+    "status": "Szerkesztés alatt",
+    "percent": 33,
+    "subtasks": [
+      {"name": "Kutatás célja", "status": "Témavezetői ellenőrzés"},
+      {"name": "Módszertan", "status": "Témavezetői ellenőrzés"},
+      {"name": "Tézisek EN", "status": "Szerkesztés alatt"},
+      {"name": "Tézisek HU", "status": "Témavezetői ellenőrzés"}
+    ]
+  },
+  "vizsgalati_szempontok": {
+    "status": "Fejezet írása"
+  },
+  "leiras_nehezsegei": {
+    "status": "Fejezet írása"
+  },
+  "kategorizalasi_szempontok": {
+    "status": "Fejezet írása"
+  },
+  "adatmodell_struktura": {
+    "status": "Források ellenőrzése"
+  },
+  "mezolista_attributumok": {
+    "status": "Források ellenőrzése"
+  },
+  "ontologiai_mapping": {
+    "status": "Források ellenőrzése"
+  },
+  "terminologiai_szotar": {
+    "status": "Témavezetői ellenőrzés"
+  }
+}
