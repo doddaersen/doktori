@@ -185,19 +185,38 @@ buttons.forEach(button => {
     updateBibliographyHeight();
   });
 });
+const statusAliases = {
+  'Fejezet írása': 'Írás',
+  'írás': 'Írás',
+  'Írás': 'Írás',
+  'Szerkesztés alatt': 'Szerkesztés',
+  'szerkesztés': 'Szerkesztés',
+  'Szerkesztés': 'Szerkesztés',
+  'Vizualizálás / ábra': 'Vizualizálás / ábra',
+  'Források ellenőrzése': 'Források ellenőrzése',
+  'Témavezetői ellenőrzés': 'Témavezetői ellenőrzés',
+  'témavezetői ellenőrzés': 'Témavezetői ellenőrzés',
+  'Kész': 'Kész',
+  'kész': 'Kész'
+};
 const statusConfig = {
-  'Fejezet írása': { className:'status-writing', order:1, label:'Fejezet írása', color:'var(--status-writing)', dot:'dot-writing' },
-  'Szerkesztés alatt': { className:'status-editing', order:2, label:'Szerkesztés alatt', color:'var(--status-editing)', dot:'dot-editing' },
+  'Írás': { className:'status-writing', order:1, label:'Írás', color:'var(--status-writing)', dot:'dot-writing' },
+  'Szerkesztés': { className:'status-editing', order:2, label:'Szerkesztés', color:'var(--status-editing)', dot:'dot-editing' },
   'Vizualizálás / ábra': { className:'status-visual', order:3, label:'Vizualizálás / ábra', color:'var(--status-visual)', dot:'dot-visual' },
   'Források ellenőrzése': { className:'status-sources', order:4, label:'Források ellenőrzése', color:'var(--status-sources)', dot:'dot-sources' },
   'Témavezetői ellenőrzés': { className:'status-supervisor', order:5, label:'Témavezetői ellenőrzés', color:'var(--status-supervisor)', dot:'dot-supervisor' },
   'Kész': { className:'status-done', order:6, label:'Kész', color:'var(--status-done)', dot:'dot-done' }
 };
-const orderedStatuses = ['Fejezet írása','Szerkesztés alatt','Vizualizálás / ábra','Források ellenőrzése','Témavezetői ellenőrzés','Kész'];
+const orderedStatuses = ['Írás','Szerkesztés','Vizualizálás / ábra','Források ellenőrzése','Témavezetői ellenőrzés','Kész'];
+
+function normalizeStatus(statusName) {
+  return statusAliases[statusName] || statusName;
+}
 
 function renderCard(card, record) {
-  const statusName = record?.status || card.dataset.status;
-  const config = statusConfig[statusName];
+  const rawStatus = record?.status || card.dataset.status;
+  const normalizedStatus = normalizeStatus(rawStatus);
+  const config = statusConfig[normalizedStatus];
   if (!config) return;
   const metaRow = card.querySelector('.status-meta');
   const progress = card.querySelector('.progress');
@@ -219,7 +238,8 @@ function renderCard(card, record) {
     const percent = card.querySelector('.chapter-percent');
     if (subtasks && Array.isArray(record.subtasks)) {
       subtasks.innerHTML = record.subtasks.map(item => {
-        const sub = statusConfig[item.status] || statusConfig['Szerkesztés alatt'];
+        const normalizedSubStatus = normalizeStatus(item.status);
+        const sub = statusConfig[normalizedSubStatus] || statusConfig['Szerkesztés'];
         return `<li class="subtask"><span class="subtask-dot ${sub.dot}"></span>${item.name}</li>`;
       }).join('');
     }
