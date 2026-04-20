@@ -14,6 +14,14 @@
   --border:#ead8e8;
   --card:#ffffff;
   --radius:10px;
+  --status-writing:#4a90e2;
+  --status-editing:#ff4fa0;
+  --status-visual:#c2188b;
+  --status-sources:#f39c12;
+  --status-supervisor:#35a76f;
+  --status-done:#168a4b;
+  --status-archived:#8e8e95;
+  --progress-empty:#eee6ec;
 }
 *{box-sizing:border-box}
 body{
@@ -83,9 +91,7 @@ body{
   width:100%;
   text-align:center;
 }
-.cat-toggle.active::after{
-  content:'⌃';
-}
+.cat-toggle.active::after{content:'⌃';}
 .cat-main{
   display:flex;
   align-items:center;
@@ -114,12 +120,9 @@ body{
   font-size:12px;
   line-height:1.35;
   font-weight:500;
-  letter-spacing:0;
-  text-transform:none;
   color:var(--muted);
   background:#fff;
 }
-
 .panel{
   display:none;
   background:#fff;
@@ -127,15 +130,12 @@ body{
   border-radius:10px;
   padding:10px;
 }
-.panel.open{
-  display:block;
-}
+.panel.open{display:block;}
 .panel.biblio-panel{
   height:560px;
   overflow-y:auto;
   overflow-x:hidden;
 }
-
 .item{
   display:block;
   background:var(--card);
@@ -147,22 +147,17 @@ body{
   transition:.15s;
   margin-bottom:8px;
 }
-.item:last-child{
-  margin-bottom:0;
-}
+.item:last-child{margin-bottom:0;}
 .item:hover{
   border-color:var(--magenta);
   transform:translateY(-2px);
 }
-.item-brief{
-  background:var(--magenta-soft);
-}
+.item-brief{background:var(--magenta-soft);}
 .item-brief .item-title{
   font-weight:400;
   line-height:1.45;
   text-wrap:pretty;
 }
-
 .item-title{
   font-weight:500;
   display:block;
@@ -170,7 +165,6 @@ body{
   font-size:15px;
   line-height:1.3;
 }
-
 .meta-row{
   display:flex;
   gap:8px;
@@ -209,161 +203,152 @@ body{
   text-transform:uppercase;
   text-decoration:none;
 }
-.inline-links a:hover{
-  color:var(--magenta);
+.inline-links a:hover{color:var(--magenta);}
+.status-row{
+  display:flex;
+  align-items:center;
+  gap:8px;
+  margin-top:8px;
+  flex-wrap:wrap;
 }
-
-@media (max-width:1200px){
-  .matrix{grid-template-columns:repeat(3,minmax(220px,1fr))}
+.status-badge{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  font-size:10px;
+  font-weight:700;
+  line-height:1;
+  text-transform:uppercase;
+  letter-spacing:.04em;
+  padding:5px 7px;
+  border-radius:999px;
+  color:#fff;
 }
+.status-dot{
+  width:7px;
+  height:7px;
+  border-radius:50%;
+  background:currentColor;
+  box-shadow:0 0 0 1px rgba(255,255,255,.35) inset;
+}
+.progress{
+  display:grid;
+  grid-template-columns:repeat(6,1fr);
+  gap:4px;
+  width:100%;
+  margin-top:8px;
+}
+.progress-step{
+  height:6px;
+  border-radius:999px;
+  background:var(--progress-empty);
+}
+.progress-step.filled{background:var(--fill, var(--magenta));}
+.status-writing{background:var(--status-writing);}
+.status-editing{background:var(--status-editing);}
+.status-visual{background:var(--status-visual);}
+.status-sources{background:var(--status-sources);}
+.status-supervisor{background:var(--status-supervisor);}
+.status-done{background:var(--status-done);}
+.status-archived{background:var(--status-archived);}
+@media (max-width:1200px){.matrix{grid-template-columns:repeat(3,minmax(220px,1fr));}}
 @media (max-width:860px){
   .wrap{padding:24px 14px 40px}
-  .matrix{grid-template-columns:repeat(2,minmax(180px,1fr))}
+  .matrix{grid-template-columns:repeat(2,minmax(180px,1fr));}
 }
 @media (max-width:560px){
-  .matrix{grid-template-columns:1fr}
-  .cat-toggle{height:auto;min-height:140px}
+  .matrix{grid-template-columns:1fr;}
+  .cat-toggle{height:auto;min-height:140px;}
 }
 </style>
 </head>
 <body>
 <main class="wrap">
-
 <div class="matrix">
-
   <div class="column">
     <button class="cat-toggle active" data-target="elmelet"><span class="cat-main">ELMÉLET</span><span class="cat-sub">A disszertáció bevezető és elméleti fejezetei.</span></button>
     <div class="panel open" id="elmelet">
-
       <a class="item" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">1. Tartalomjegyzék</div>
         <div class="meta-row"><div class="type">DOC</div></div>
       </a>
-
       <a class="item" href="https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">1. Bevezetés</div>
         <div class="meta-row"><div class="type">DOC</div></div>
       </a>
-
       <a class="item" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">2. A könyv fogalmának újraírása</div>
         <div class="meta-row"><div class="type">DOC</div></div>
       </a>
-
-      <a class="item" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+      <a class="item has-status" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">3. Melyik polcra kerüljenek a művészkönyvek?</div>
         <div class="meta-row"><div class="type">DOC</div></div>
+        <div class="status-row"></div>
+        <div class="progress"></div>
       </a>
-
-      <a class="item" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+      <a class="item has-status" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">4. Régi technikák, új narratívák</div>
         <div class="meta-row"><div class="type">DOC</div></div>
+        <div class="status-row"></div>
+        <div class="progress"></div>
       </a>
-
     </div>
   </div>
-
   <div class="column">
     <button class="cat-toggle active" data-target="leirasok"><span class="cat-main">MŰVÉSZKÖNYV-<br>LEÍRÁSOK</span><span class="cat-sub">Esettanulmányok és a leírási szempontok dokumentumai.</span></button>
     <div class="panel open" id="leirasok">
-      <a class="item" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">5.1 Vizsgálati szempontok</div>
         <div class="meta-row"><div class="type">DOC</div></div>
+        <div class="status-row"></div>
+        <div class="progress"></div>
       </a>
-
-      <a class="item" href="https://docs.google.com/document/d/1auVvGzN6lbjdAjfE0hLCYE9irMtXU7oP7UXEamwiUdA/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1auVvGzN6lbjdAjfE0hLCYE9irMtXU7oP7UXEamwiUdA/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">5.3 A leírás nehézségei</div>
         <div class="meta-row"><div class="type">DOC</div></div>
+        <div class="status-row"></div>
+        <div class="progress"></div>
       </a>
-
-      <a class="item" href="https://docs.google.com/document/d/1tgewAYNc1oU2NVTMvkP6g5OXNa3KisRq5E9XWm2iEeE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1tgewAYNc1oU2NVTMvkP6g5OXNa3KisRq5E9XWm2iEeE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
         <div class="item-title">5.4 Kategorizálási szempontok</div>
         <div class="meta-row"><div class="type">DOC</div></div>
+        <div class="status-row"></div>
+        <div class="progress"></div>
       </a>
-
     </div>
   </div>
-
   <div class="column">
     <button class="cat-toggle" data-target="modell"><span class="cat-main">MODELL</span><span class="cat-sub">A modell szerkezete, mezőlistái, mappingjei és terminológiai elemei.</span></button>
     <div class="panel" id="modell">
-
       <div class="item item-brief">
         <div class="item-title">A modellhez feltöltött dokumentumok azt a struktúrát mutatják meg, amelyben a művek adatai, a formai és technikai jellemzők, valamint ezek kapcsolatai rendszerré rendeződnek. A cél ezeknek a fogalmi elemeknek, szótáraknak és mappingeknek az áttekinthető megjelenítése.</div>
       </div>
-
-      <a class="item" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">Adatmodell – struktúra</div>
-        <div class="meta-row"><div class="type">XLS</div></div>
-      </a>
-
-      <a class="item" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">Mezőlista / attribútumok</div>
-        <div class="meta-row"><div class="type">XLS</div></div>
-      </a>
-
-      <a class="item" href="https://docs.google.com/spreadsheets/d/1ZL1DUzOMEOb-rxGUxcbVALw_vdJO_9CY7XhxuLCE1io/edit" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">Ontológiai mapping</div>
-        <div class="meta-row"><div class="type">XLS</div></div>
-      </a>
-
-      <a class="item" href="https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">Terminológiai szótár</div>
-        <div class="meta-row"><div class="type">XLS</div></div>
-      </a>
-
+      <a class="item" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit" target="_blank" rel="noopener noreferrer"><div class="item-title">Adatmodell – struktúra</div><div class="meta-row"><div class="type">XLS</div></div></a>
+      <a class="item" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit" target="_blank" rel="noopener noreferrer"><div class="item-title">Mezőlista / attribútumok</div><div class="meta-row"><div class="type">XLS</div></div></a>
+      <a class="item" href="https://docs.google.com/spreadsheets/d/1ZL1DUzOMEOb-rxGUxcbVALw_vdJO_9CY7XhxuLCE1io/edit" target="_blank" rel="noopener noreferrer"><div class="item-title">Ontológiai mapping</div><div class="meta-row"><div class="type">XLS</div></div></a>
+      <a class="item" href="https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit" target="_blank" rel="noopener noreferrer"><div class="item-title">Terminológiai szótár</div><div class="meta-row"><div class="type">XLS</div></div></a>
     </div>
   </div>
-
   <div class="column">
     <button class="cat-toggle" data-target="ontologia"><span class="cat-main">ONTOLÓGIA</span><span class="cat-sub">Szótárakhoz és ontológiai kapcsolatokhoz tartozó anyagok.</span></button>
     <div class="panel" id="ontologia">
-
-      <a class="item" href="#" onclick="return false;">
-        <div class="item-title">Szótárak</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-      </a>
-
-      <a class="item" href="#" onclick="return false;">
-        <div class="item-title">Mapping</div>
-        <div class="meta-row"><div class="type">XLS</div></div>
-      </a>
-
+      <a class="item" href="#" onclick="return false;"><div class="item-title">Szótárak</div><div class="meta-row"><div class="type">DOC</div></div></a>
+      <a class="item" href="#" onclick="return false;"><div class="item-title">Mapping</div><div class="meta-row"><div class="type">XLS</div></div></a>
     </div>
   </div>
-
   <div class="column">
     <button class="cat-toggle" data-target="bibliografia"><span class="cat-main">BIBLIOGRÁFIA</span><span class="cat-sub">A kutatáshoz kapcsolódó publikációk és bibliográfiai tételek.</span></button>
-    <div class="panel biblio-panel" id="bibliografia">
-      <div id="zotero-items"></div>
-    </div>
-
+    <div class="panel biblio-panel" id="bibliografia"><div id="zotero-items"></div></div>
     <button class="cat-toggle" data-target="etc"><span class="cat-main">ETC</span><span class="cat-sub">Intézményi linkek, kapcsolat és szakmai önéletrajz.</span></button>
     <div class="panel" id="etc">
-      <div class="item">
-        <div class="item-title">Kun Dorottya</div>
-        <div class="meta-row spread">
-          <div class="inline-links">
-            <a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a>
-            <a href="mailto:dkun@mome.hu">Kontakt</a>
-          </div>
-        </div>
-      </div>
-
-      <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">MOME Könyvtár</div>
-        <div class="meta-row"><div class="label">LINK</div></div>
-      </a>
+      <div class="item"><div class="item-title">Kun Dorottya</div><div class="meta-row spread"><div class="inline-links"><a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a><a href="mailto:dkun@mome.hu">Kontakt</a></div></div></div>
+      <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer"><div class="item-title">MOME Könyvtár</div><div class="meta-row"><div class="label">LINK</div></div></a>
     </div>
   </div>
-
 </div>
-
 </main>
-
 <script>
 const buttons = document.querySelectorAll('.cat-toggle');
-
 buttons.forEach(button => {
   button.addEventListener('click', () => {
     const target = document.getElementById(button.dataset.target);
@@ -372,58 +357,65 @@ buttons.forEach(button => {
     button.classList.toggle('active', !isOpen);
   });
 });
-
+const statusConfig = {
+  'Fejezet írása': { key:'writing', className:'status-writing', order:1, label:'Fejezet írása', color:'var(--status-writing)' },
+  'Szerkesztés alatt': { key:'editing', className:'status-editing', order:2, label:'Szerkesztés alatt', color:'var(--status-editing)' },
+  'Vizualizálás / ábra': { key:'visual', className:'status-visual', order:3, label:'Vizualizálás / ábra', color:'var(--status-visual)' },
+  'Források ellenőrzése': { key:'sources', className:'status-sources', order:4, label:'Források ellenőrzése', color:'var(--status-sources)' },
+  'Témavezetői ellenőrzés': { key:'supervisor', className:'status-supervisor', order:5, label:'Témavezetői ellenőrzés', color:'var(--status-supervisor)' },
+  'Kész': { key:'done', className:'status-done', order:6, label:'Kész', color:'var(--status-done)' },
+  'Archív': { key:'archived', className:'status-archived', order:6, label:'Archív', color:'var(--status-archived)' }
+};
+const orderedStatuses = [
+  'Fejezet írása','Szerkesztés alatt','Vizualizálás / ábra','Források ellenőrzése','Témavezetői ellenőrzés','Kész'
+];
+document.querySelectorAll('.has-status').forEach(card => {
+  const statusName = card.dataset.status;
+  const config = statusConfig[statusName];
+  if (!config) return;
+  const row = card.querySelector('.status-row');
+  const progress = card.querySelector('.progress');
+  row.innerHTML = `<span class="status-badge ${config.className}"><span class="status-dot"></span>${config.label}</span>`;
+  progress.innerHTML = '';
+  orderedStatuses.forEach((name, index) => {
+    const step = document.createElement('div');
+    step.className = 'progress-step';
+    step.style.setProperty('--fill', config.color);
+    if (index < config.order) step.classList.add('filled');
+    progress.appendChild(step);
+  });
+});
 const zoteroContainer = document.getElementById('zotero-items');
 const zoteroFeedUrl = 'https://api.zotero.org/groups/6253421/collections/GRCKZZZV/items/top?direction=asc&format=atom&sort=title&limit=100';
-
 async function loadZoteroItems() {
   if (!zoteroContainer) return;
-
   zoteroContainer.innerHTML = '<div class="meta">Betöltés…</div>';
-
   try {
     const response = await fetch(zoteroFeedUrl);
     const xmlText = await response.text();
-
     const parser = new DOMParser();
     const xml = parser.parseFromString(xmlText, 'application/xml');
     const entries = Array.from(xml.querySelectorAll('entry'));
     const fragment = document.createDocumentFragment();
-
     entries.forEach(entry => {
       const title = entry.querySelector('title')?.textContent?.trim() || 'Cím nélkül';
       const altLink = Array.from(entry.querySelectorAll('link')).find(l => l.getAttribute('rel') === 'alternate');
       const href = altLink?.getAttribute('href') || zoteroFeedUrl;
-
       const item = document.createElement('a');
       item.className = 'item';
       item.href = href;
       item.target = '_blank';
       item.rel = 'noopener noreferrer';
-
-      item.innerHTML = `
-        <div class="item-title">${title}</div>
-        <div class="meta-row"><div class="label">PUBLIKÁCIÓ</div></div>
-      `;
-
+      item.innerHTML = `<div class="item-title">${title}</div><div class="meta-row"><div class="label">PUBLIKÁCIÓ</div></div>`;
       fragment.appendChild(item);
     });
-
     zoteroContainer.innerHTML = '';
     zoteroContainer.appendChild(fragment);
-
   } catch (error) {
-    zoteroContainer.innerHTML = `
-      <a class="item" href="${zoteroFeedUrl}" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">Zotero bibliográfia</div>
-        <div class="meta-row"><div class="label">PUBLIKÁCIÓ</div></div>
-      </a>
-    `;
+    zoteroContainer.innerHTML = `<a class="item" href="${zoteroFeedUrl}" target="_blank" rel="noopener noreferrer"><div class="item-title">Zotero bibliográfia</div><div class="meta-row"><div class="label">PUBLIKÁCIÓ</div></div></a>`;
   }
 }
-
 loadZoteroItems();
 </script>
-
 </body>
 </html>
