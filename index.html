@@ -14,13 +14,13 @@
   --border:#ead8e8;
   --card:#ffffff;
   --radius:10px;
-  --status-writing:#4a90e2;
-  --status-editing:#ff4fa0;
-  --status-visual:#c2188b;
-  --status-sources:#f39c12;
-  --status-supervisor:#35a76f;
-  --status-done:#168a4b;
-  --status-archived:#8e8e95;
+  --status-writing:#4a6cf7;
+  --status-editing:#ff4f9a;
+  --status-visual:#ff66b3;
+  --status-sources:#ff9a4d;
+  --status-supervisor:#71d68b;
+  --status-done:#2fb36d;
+  --status-archived:#2b9a66;
   --progress-empty:#eee6ec;
 }
 *{box-sizing:border-box}
@@ -91,7 +91,7 @@ body{
   width:100%;
   text-align:center;
 }
-.cat-toggle.active::after{content:'⌃';}
+.cat-toggle.active{content:'⌃';}
 .cat-main{
   display:flex;
   align-items:center;
@@ -268,61 +268,25 @@ body{
   <div class="column">
     <button class="cat-toggle active" data-target="elmelet"><span class="cat-main">ELMÉLET</span><span class="cat-sub">A disszertáció bevezető és elméleti fejezetei.</span></button>
     <div class="panel open" id="elmelet">
-      <a class="item" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">1. Tartalomjegyzék</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-      </a>
-      <a class="item" href="https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">1. Bevezetés</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-      </a>
-      <a class="item" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">2. A könyv fogalmának újraírása</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-      </a>
-      <a class="item has-status" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">3. Melyik polcra kerüljenek a művészkönyvek?</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-        <div class="status-row"></div>
-        <div class="progress"></div>
-      </a>
-      <a class="item has-status" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">4. Régi technikák, új narratívák</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-        <div class="status-row"></div>
-        <div class="progress"></div>
-      </a>
+      <a class="item" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">1. Tartalomjegyzék</div><div class="meta-row"><div class="type">DOC</div></div></a>
+      <a class="item" href="https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">1. Bevezetés</div><div class="meta-row"><div class="type">DOC</div></div></a>
+      <a class="item" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">2. A könyv fogalmának újraírása</div><div class="meta-row"><div class="type">DOC</div></div></a>
+      <a class="item has-status" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">3. Melyik polcra kerüljenek a művészkönyvek?</div><div class="meta-row"><div class="type">DOC</div></div><div class="status-row"></div><div class="progress"></div></a>
+      <a class="item has-status" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">4. Régi technikák, új narratívák</div><div class="meta-row"><div class="type">DOC</div></div><div class="status-row"></div><div class="progress"></div></a>
     </div>
   </div>
   <div class="column">
     <button class="cat-toggle active" data-target="leirasok"><span class="cat-main">MŰVÉSZKÖNYV-<br>LEÍRÁSOK</span><span class="cat-sub">Esettanulmányok és a leírási szempontok dokumentumai.</span></button>
     <div class="panel open" id="leirasok">
-      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">5.1 Vizsgálati szempontok</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-        <div class="status-row"></div>
-        <div class="progress"></div>
-      </a>
-      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1auVvGzN6lbjdAjfE0hLCYE9irMtXU7oP7UXEamwiUdA/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">5.3 A leírás nehézségei</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-        <div class="status-row"></div>
-        <div class="progress"></div>
-      </a>
-      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1tgewAYNc1oU2NVTMvkP6g5OXNa3KisRq5E9XWm2iEeE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
-        <div class="item-title">5.4 Kategorizálási szempontok</div>
-        <div class="meta-row"><div class="type">DOC</div></div>
-        <div class="status-row"></div>
-        <div class="progress"></div>
-      </a>
+      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">5.1 Vizsgálati szempontok</div><div class="meta-row"><div class="type">DOC</div></div><div class="status-row"></div><div class="progress"></div></a>
+      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1auVvGzN6lbjdAjfE0hLCYE9irMtXU7oP7UXEamwiUdA/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">5.3 A leírás nehézségei</div><div class="meta-row"><div class="type">DOC</div></div><div class="status-row"></div><div class="progress"></div></a>
+      <a class="item has-status" data-status="Fejezet írása" href="https://docs.google.com/document/d/1tgewAYNc1oU2NVTMvkP6g5OXNa3KisRq5E9XWm2iEeE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">5.4 Kategorizálási szempontok</div><div class="meta-row"><div class="type">DOC</div></div><div class="status-row"></div><div class="progress"></div></a>
     </div>
   </div>
   <div class="column">
     <button class="cat-toggle" data-target="modell"><span class="cat-main">MODELL</span><span class="cat-sub">A modell szerkezete, mezőlistái, mappingjei és terminológiai elemei.</span></button>
     <div class="panel" id="modell">
-      <div class="item item-brief">
-        <div class="item-title">A modellhez feltöltött dokumentumok azt a struktúrát mutatják meg, amelyben a művek adatai, a formai és technikai jellemzők, valamint ezek kapcsolatai rendszerré rendeződnek. A cél ezeknek a fogalmi elemeknek, szótáraknak és mappingeknek az áttekinthető megjelenítése.</div>
-      </div>
+      <div class="item item-brief"><div class="item-title">A modellhez feltöltött dokumentumok azt a struktúrát mutatják meg, amelyben a művek adatai, a formai és technikai jellemzők, valamint ezek kapcsolatai rendszerré rendeződnek. A cél ezeknek a fogalmi elemeknek, szótáraknak és mappingeknek az áttekinthető megjelenítése.</div></div>
       <a class="item" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit" target="_blank" rel="noopener noreferrer"><div class="item-title">Adatmodell – struktúra</div><div class="meta-row"><div class="type">XLS</div></div></a>
       <a class="item" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit" target="_blank" rel="noopener noreferrer"><div class="item-title">Mezőlista / attribútumok</div><div class="meta-row"><div class="type">XLS</div></div></a>
       <a class="item" href="https://docs.google.com/spreadsheets/d/1ZL1DUzOMEOb-rxGUxcbVALw_vdJO_9CY7XhxuLCE1io/edit" target="_blank" rel="noopener noreferrer"><div class="item-title">Ontológiai mapping</div><div class="meta-row"><div class="type">XLS</div></div></a>
@@ -366,9 +330,7 @@ const statusConfig = {
   'Kész': { key:'done', className:'status-done', order:6, label:'Kész', color:'var(--status-done)' },
   'Archív': { key:'archived', className:'status-archived', order:6, label:'Archív', color:'var(--status-archived)' }
 };
-const orderedStatuses = [
-  'Fejezet írása','Szerkesztés alatt','Vizualizálás / ábra','Források ellenőrzése','Témavezetői ellenőrzés','Kész'
-];
+const orderedStatuses = ['Fejezet írása','Szerkesztés alatt','Vizualizálás / ábra','Források ellenőrzése','Témavezetői ellenőrzés','Kész'];
 document.querySelectorAll('.has-status').forEach(card => {
   const statusName = card.dataset.status;
   const config = statusConfig[statusName];
