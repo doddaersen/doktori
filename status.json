@@ -12,6 +12,15 @@
       {"name": "Tézisek HU", "status": "Témavezetői ellenőrzés"}
     ]
   },
+  "konyv_fogalmanak_ujrairasa": {
+    "status": "Fejezet írása"
+  },
+  "melyik_polcra": {
+    "status": "Fejezet írása"
+  },
+  "regi_technikak": {
+    "status": "Fejezet írása"
+  },
   "vizsgalati_szempontok": {
     "status": "Szerkesztés alatt"
   },
