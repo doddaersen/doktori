@@ -25,8 +25,8 @@
 }
 *{box-sizing:border-box}
 body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;background:var(--bg);color:var(--text);}
-.wrap{max-width:1200px;margin:auto;padding:24px 12px 40px;}
-.matrix{display:grid;grid-template-columns:repeat(5,minmax(180px,1fr));gap:10px;align-items:start;}
+.wrap{max-width:1440px;margin:auto;padding:24px 12px 40px;}
+.matrix{display:grid;grid-template-columns:repeat(6,minmax(170px,1fr));gap:10px;align-items:start;}
 .column{display:flex;flex-direction:column;gap:8px;}
 .cat-toggle{appearance:none;border:1px solid var(--border);background:var(--magenta);border-radius:var(--radius);padding:12px 12px 26px;cursor:pointer;transition:.15s;width:100%;position:relative;display:block;height:118px;text-align:left;box-shadow:none;}
 .cat-toggle:hover{filter:brightness(.98);}
@@ -62,11 +62,21 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .subtask-dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;display:inline-block;}
 .chapter-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);}
 .chapter-percent{font-weight:700;color:var(--text);}
+.sticker-card{display:block;border:1px solid var(--border);border-radius:var(--radius);background:#fff;overflow:hidden;text-decoration:none;color:inherit;transition:.15s;}
+.sticker-card:hover{filter:brightness(.99);transform:translateY(-1px);}
+.sticker-top{background:var(--magenta);color:#fff;padding:10px 12px 8px;}
+.sticker-top .hello{display:block;font-family:'Barlow',Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.045em;font-size:13px;line-height:1;margin-bottom:2px;}
+.sticker-top .name-line{display:block;font-family:'Barlow',Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.045em;font-size:13px;line-height:1;}
+.sticker-body{background:#fff;padding:14px 12px 12px;min-height:94px;display:flex;flex-direction:column;justify-content:space-between;}
+.sticker-name{font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;font-weight:600;font-size:22px;line-height:1.08;color:var(--text);}
+.sticker-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:10px;}
+.sticker-links a{font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;}
+.sticker-links a:hover{color:#000;}
 .status-writing,.dot-writing{background:var(--status-writing);}
 .status-editing,.status-visual,.status-sources,.dot-editing,.dot-visual,.dot-sources{background:var(--status-editing);color:#4a4a12;}
 .status-supervisor,.dot-supervisor{background:var(--status-supervisor);color:#21472a;}
 .status-done,.dot-done{background:var(--status-done);}
-@media (max-width:1200px){.matrix{grid-template-columns:repeat(3,minmax(220px,1fr));}}
+@media (max-width:1400px){.matrix{grid-template-columns:repeat(3,minmax(220px,1fr));}.wrap{max-width:1200px;}}
 @media (max-width:860px){.wrap{padding:24px 14px 40px}.matrix{grid-template-columns:repeat(2,minmax(180px,1fr));}}
 @media (max-width:560px){.matrix{grid-template-columns:1fr;}.cat-toggle{height:auto;min-height:118px;}}
 </style>
@@ -74,6 +84,22 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 <body>
 <main class="wrap">
 <div class="matrix">
+  <div class="column">
+    <div class="sticker-card">
+      <div class="sticker-top">
+        <span class="hello">HELLO</span>
+        <span class="name-line">MY NAME IS</span>
+      </div>
+      <div class="sticker-body">
+        <div class="sticker-name">Kun Dorottya</div>
+        <div class="sticker-links">
+          <a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a>
+          <a href="mailto:dkun@mome.hu">Kontakt</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <div class="column">
     <button class="cat-toggle active" data-target="elmelet"><span class="cat-main">BEVEZETÉS</span><span class="cat-sub">Tartalomjegyzék és bevezető fejezet a ClickUp-struktúrának megfelelően.</span></button>
     <div class="panel open" id="elmelet">
@@ -112,11 +138,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   <div class="column">
     <button class="cat-toggle active" data-target="bibliografia"><span class="cat-main">BIBLIOGRÁFIA</span><span class="cat-sub">Fejezetenkénti bibliográfiai blokkok, később külön Zotero-mappákkal.</span></button>
     <div class="panel biblio-panel open" id="bibliografia"><div id="zotero-items"></div></div>
-    <button class="cat-toggle active" data-target="etc"><span class="cat-main">ETC</span><span class="cat-sub">Intézményi linkek, kapcsolat és szakmai önéletrajz.</span></button>
-    <div class="panel open" id="etc">
-      <div class="item"><div class="item-title">Kun Dorottya</div><div class="meta-row spread"><div class="inline-links"><a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a><a href="mailto:dkun@mome.hu">Kontakt</a></div></div></div>
-      <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">MOME Könyvtár</div></div><span class="item-linkout">↗</span></div><div class="meta-row"><div class="label">LINK</div></div></a>
-    </div>
+    <a class="item" href="https://konyvtar.mome.hu" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">MOME Könyvtár</div></div><span class="item-linkout">↗</span></div><div class="meta-row"><div class="label">LINK</div></div></a>
   </div>
 </div>
 </main>
@@ -180,11 +202,11 @@ function updateBibliographyHeight() {
   const columns = Array.from(matrix.querySelectorAll('.column'));
   const bibliographyPanel = document.getElementById('bibliografia');
   const bibliographyButton = document.querySelector('[data-target="bibliografia"]');
-  if (!bibliographyPanel || !bibliographyButton || columns.length < 5 || window.innerWidth <= 860) {
+  if (!bibliographyPanel || !bibliographyButton || columns.length < 6 || window.innerWidth <= 860) {
     if (bibliographyPanel) bibliographyPanel.style.height = '';
     return;
   }
-  const referenceHeights = columns.slice(0,4).map(col => col.offsetHeight);
+  const referenceHeights = columns.slice(0,5).map(col => col.offsetHeight);
   const maxReference = Math.max(...referenceHeights);
   const buttonHeight = bibliographyButton.offsetHeight;
   const columnGap = 8;
