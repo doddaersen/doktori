@@ -1,84 +1,84 @@
 {
   "tartalomjegyzek": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   },
   "bevezetes": {
-    "status": "Szerkesztés alatt",
+    "status": "szerkesztés",
     "percent": 33,
     "subtasks": [
-      {"name": "Kutatás célja", "status": "Témavezetői ellenőrzés"},
-      {"name": "Módszertan", "status": "Témavezetői ellenőrzés"},
-      {"name": "Tézisek EN", "status": "Szerkesztés alatt"},
-      {"name": "Tézisek HU", "status": "Témavezetői ellenőrzés"}
+      {"name": "Kutatás célja", "status": "témavezetői ellenőrzés"},
+      {"name": "Módszertan", "status": "témavezetői ellenőrzés"},
+      {"name": "Tézisek EN", "status": "szerkesztés"},
+      {"name": "Tézisek HU", "status": "témavezetői ellenőrzés"}
     ]
   },
   "konyv_fogalmanak_ujrairasa": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "melyik_polcra": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "regi_technikak": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "vizsgalati_szempontok": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   },
   "esettanulmany_13": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   },
   "elemzes_kihivasok": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   },
   "kategorizalasi_szempontok": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   },
   "adatmodell_struktura": {
-    "status": "Témavezetői ellenőrzés"
+    "status": "témavezetői ellenőrzés"
   },
   "mezolista_attributumok": {
-    "status": "Témavezetői ellenőrzés"
+    "status": "témavezetői ellenőrzés"
   },
   "ontologiai_mapping": {
-    "status": "Témavezetői ellenőrzés"
+    "status": "témavezetői ellenőrzés"
   },
   "terminologiai_szotar": {
-    "status": "Témavezetői ellenőrzés"
+    "status": "témavezetői ellenőrzés"
   },
   "ontologia_fejezet": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   },
   "szotarak_xls": {
-    "status": "Témavezetői ellenőrzés"
+    "status": "témavezetői ellenőrzés"
   },
   "osszegzes_tavlatok": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "zaro_gondolatok": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "koszonetnyilvanitas": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "bibl_2": {
-    "status": "Témavezetői ellenőrzés"
+    "status": "témavezetői ellenőrzés"
   },
   "bibl_3": {
-    "status": "Témavezetői ellenőrzés"
+    "status": "témavezetői ellenőrzés"
   },
   "bibl_4": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   },
   "bibl_5": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "bibl_6": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "bibl_7": {
-    "status": "Fejezet írása"
+    "status": "írás"
   },
   "keplista": {
-    "status": "Szerkesztés alatt"
+    "status": "szerkesztés"
   }
 }
