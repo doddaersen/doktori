@@ -15,8 +15,8 @@
   --card:#ffffff;
   --radius:10px;
   --status-writing:#d84a4a;
-  --status-editing:#d96b1f;
-  --status-visual:#f39a4b;
+  --status-editing:#d8cf5a;
+  --status-visual:#d8cf5a;
   --status-sources:#d8cf5a;
   --status-supervisor:#9bd6a4;
   --status-done:#2f8f57;
@@ -45,7 +45,6 @@ body{
   flex-direction:column;
   gap:8px;
 }
-
 .cat-toggle{
   appearance:none;
   border:1px solid var(--magenta);
@@ -244,9 +243,9 @@ body{
 }
 .progress-step.filled{background:var(--fill, var(--magenta));}
 .status-writing{background:var(--status-writing);}
-.status-editing{background:var(--status-editing);}
-.status-visual{background:var(--status-visual);}
-.status-sources{background:var(--status-sources); color:#3f3a16;}
+.status-editing{background:var(--status-editing); color:#4a4315;}
+.status-visual{background:var(--status-visual); color:#4a4315;}
+.status-sources{background:var(--status-sources); color:#4a4315;}
 .status-supervisor{background:var(--status-supervisor); color:#21472a;}
 .status-done{background:var(--status-done);}
 @media (max-width:1200px){.matrix{grid-template-columns:repeat(3,minmax(220px,1fr));}}
