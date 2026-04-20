@@ -14,13 +14,12 @@
   --border:#ead8e8;
   --card:#ffffff;
   --radius:10px;
-  --status-writing:#4f6fff;
-  --status-editing:#ff4f96;
-  --status-visual:#ff6bb7;
-  --status-sources:#ff944d;
-  --status-supervisor:#7bd88f;
-  --status-done:#35b56f;
-  --status-archived:#2ea36b;
+  --status-writing:#d84a4a;
+  --status-editing:#d96b1f;
+  --status-visual:#f39a4b;
+  --status-sources:#d8cf5a;
+  --status-supervisor:#9bd6a4;
+  --status-done:#2f8f57;
   --progress-empty:#eee6ec;
 }
 *{box-sizing:border-box}
@@ -247,10 +246,9 @@ body{
 .status-writing{background:var(--status-writing);}
 .status-editing{background:var(--status-editing);}
 .status-visual{background:var(--status-visual);}
-.status-sources{background:var(--status-sources);}
-.status-supervisor{background:var(--status-supervisor);}
+.status-sources{background:var(--status-sources); color:#3f3a16;}
+.status-supervisor{background:var(--status-supervisor); color:#21472a;}
 .status-done{background:var(--status-done);}
-.status-archived{background:var(--status-archived);}
 @media (max-width:1200px){.matrix{grid-template-columns:repeat(3,minmax(220px,1fr));}}
 @media (max-width:860px){
   .wrap{padding:24px 14px 40px}
@@ -327,8 +325,7 @@ const statusConfig = {
   'Vizualizálás / ábra': { key:'visual', className:'status-visual', order:3, label:'Vizualizálás / ábra', color:'var(--status-visual)' },
   'Források ellenőrzése': { key:'sources', className:'status-sources', order:4, label:'Források ellenőrzése', color:'var(--status-sources)' },
   'Témavezetői ellenőrzés': { key:'supervisor', className:'status-supervisor', order:5, label:'Témavezetői ellenőrzés', color:'var(--status-supervisor)' },
-  'Kész': { key:'done', className:'status-done', order:6, label:'Kész', color:'var(--status-done)' },
-  'Archív': { key:'archived', className:'status-archived', order:6, label:'Archív', color:'var(--status-archived)' }
+  'Kész': { key:'done', className:'status-done', order:6, label:'Kész', color:'var(--status-done)' }
 };
 const orderedStatuses = ['Fejezet írása','Szerkesztés alatt','Vizualizálás / ábra','Források ellenőrzése','Témavezetői ellenőrzés','Kész'];
 document.querySelectorAll('.has-status').forEach(card => {
