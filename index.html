@@ -51,10 +51,15 @@ body{margin:0;font-family:Inter, Arial, Helvetica, sans-serif;background:var(--b
 .progress{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;width:100%;margin-top:8px;}
 .progress-step{height:6px;border-radius:999px;background:var(--progress-empty);}
 .progress-step.filled{background:var(--fill, var(--magenta));}
-.status-writing{background:var(--status-writing);}
-.status-editing,.status-visual,.status-sources{background:var(--status-editing);color:#4a4315;}
-.status-supervisor{background:var(--status-supervisor);color:#21472a;}
-.status-done{background:var(--status-done);}
+.subtasks{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px;}
+.subtask{display:flex;align-items:center;gap:8px;font-size:12px;line-height:1.3;color:var(--text);}
+.subtask-dot{width:8px;height:8px;border-radius:50%;flex:0 0 8px;display:inline-block;}
+.chapter-footer{display:flex;justify-content:space-between;align-items:center;margin-top:10px;padding-top:8px;border-top:1px solid var(--border);font-size:11px;color:var(--muted);}
+.chapter-percent{font-weight:700;color:var(--text);}
+.status-writing,.dot-writing{background:var(--status-writing);}
+.status-editing,.status-visual,.status-sources,.dot-editing,.dot-visual,.dot-sources{background:var(--status-editing);color:#4a4315;}
+.status-supervisor,.dot-supervisor{background:var(--status-supervisor);color:#21472a;}
+.status-done,.dot-done{background:var(--status-done);}
 @media (max-width:1200px){.matrix{grid-template-columns:repeat(3,minmax(220px,1fr));}}
 @media (max-width:860px){.wrap{padding:24px 14px 40px}.matrix{grid-template-columns:repeat(2,minmax(180px,1fr));}}
 @media (max-width:560px){.matrix{grid-template-columns:1fr;}.cat-toggle{height:auto;min-height:140px;}}
@@ -67,7 +72,7 @@ body{margin:0;font-family:Inter, Arial, Helvetica, sans-serif;background:var(--b
     <button class="cat-toggle active" data-target="elmelet"><span class="cat-main">BEVEZETÉS</span><span class="cat-sub">Tartalomjegyzék és bevezető fejezet a ClickUp-struktúrának megfelelően.</span></button>
     <div class="panel open" id="elmelet">
       <a class="item has-status" data-status="Szerkesztés alatt" data-filetype="DOC" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">Tartalomjegyzék</div><div class="meta-row status-meta"></div><div class="progress"></div></a>
-      <a class="item has-status" data-status="Fejezet írása" data-filetype="DOC" href="https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">Bevezetés</div><div class="meta-row status-meta"></div><div class="progress"></div></a>
+      <a class="item has-status has-subtasks" data-status="Szerkesztés alatt" data-filetype="DOC" data-percent="33" href="https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">Bevezetés</div><div class="meta-row status-meta"></div><ul class="subtasks"><li class="subtask"><span class="subtask-dot dot-supervisor"></span>Kutatás célja</li><li class="subtask"><span class="subtask-dot dot-supervisor"></span>Módszertan</li><li class="subtask"><span class="subtask-dot dot-editing"></span>Tézisek EN</li><li class="subtask"><span class="subtask-dot dot-supervisor"></span>Tézisek HU</li></ul><div class="progress"></div><div class="chapter-footer"><span>Készültségi állapot</span><span class="chapter-percent">33%</span></div></a>
     </div>
   </div>
 
