@@ -39,11 +39,20 @@
   "szotarak_xls": {
     "status": "Témavezetői ellenőrzés"
   },
+  "osszegzes_tavlatok": {
+    "status": "Fejezet írása"
+  },
+  "zaro_gondolatok": {
+    "status": "Fejezet írása"
+  },
+  "koszonetnyilvanitas": {
+    "status": "Fejezet írása"
+  },
   "bibl_2": {
-    "status": "Források ellenőrzése"
+    "status": "Témavezetői ellenőrzés"
   },
   "bibl_3": {
-    "status": "Szerkesztés alatt"
+    "status": "Témavezetői ellenőrzés"
   },
   "bibl_4": {
     "status": "Szerkesztés alatt"
