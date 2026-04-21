@@ -6,6 +6,23 @@
     "témavezetői ellenőrzés": "#65CCA9",
     "kész": "#458B73"
   },
+  "ui": {
+    "theory_cards": {
+      "display_mode": "hierarchical_always_open",
+      "chapter_title_case": "uppercase",
+      "subchapter_title_weight": "bold",
+      "subchapter_title_case": "sentence",
+      "item_weight": "regular",
+      "item_case": "sentence",
+      "show_preview": false,
+      "show_toggle": false,
+      "show_all_levels": true,
+      "indentation": {
+        "subchapter": 0,
+        "item": 1
+      }
+    }
+  },
   "tartalomjegyzek": {
     "status": "szerkesztés"
   },
