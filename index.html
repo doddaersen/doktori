@@ -48,9 +48,6 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .meta-row{display:flex;gap:6px;align-items:center;flex-wrap:wrap;margin-top:6px;}
 .meta-row:first-of-type{margin-top:0;}
 .label{font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;}
-.inline-links{display:flex;gap:12px;align-items:center;flex-wrap:wrap;}
-.inline-links a{font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;text-decoration:none;}
-.inline-links a:hover{color:#000;}
 .status-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.04em;padding:5px 7px;border-radius:999px;color:#fff;}
 .status-dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 1px rgba(255,255,255,.35) inset;}
 .progress{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;width:100%;margin-top:8px;}
@@ -147,7 +144,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
           <a class="theory-doc-link" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">A könyv fogalmának újraírása</div><span class="file-ext">.doc</span><span class="item-linkout">↗</span></a>
         </div>
         <div class="theory-preview"></div>
-        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">Alfejezetek megjelenítése</span><span class="theory-toggle-icon">⌄</span></button>
+        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">További alfejezetek</span><span class="theory-toggle-icon">⌄</span></button>
         <div class="theory-subchapters"></div>
         <div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div>
       </div>
@@ -157,7 +154,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
           <a class="theory-doc-link" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">Melyik polcra kerüljenek a művészkönyvek?</div><span class="file-ext">.doc</span><span class="item-linkout">↗</span></a>
         </div>
         <div class="theory-preview"></div>
-        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">Alfejezetek megjelenítése</span><span class="theory-toggle-icon">⌄</span></button>
+        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">További alfejezetek</span><span class="theory-toggle-icon">⌄</span></button>
         <div class="theory-subchapters"></div>
         <div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div>
       </div>
@@ -167,7 +164,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
           <a class="theory-doc-link" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">Régi technikák, új narratívák</div><span class="file-ext">.doc</span><span class="item-linkout">↗</span></a>
         </div>
         <div class="theory-preview"></div>
-        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">Alfejezetek megjelenítése</span><span class="theory-toggle-icon">⌄</span></button>
+        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">További alfejezetek</span><span class="theory-toggle-icon">⌄</span></button>
         <div class="theory-subchapters"></div>
         <div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div>
       </div>
@@ -243,7 +240,7 @@ theoryToggles.forEach(toggle => {
     const expanded = card.classList.toggle('expanded');
     toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
     const text = toggle.querySelector('.theory-toggle-text');
-    if (text) text.textContent = expanded ? 'Alfejezetek elrejtése' : 'Alfejezetek megjelenítése';
+    if (text) text.textContent = expanded ? 'Alfejezetek elrejtése' : 'További alfejezetek';
     updateBibliographyHeight();
   });
 });
