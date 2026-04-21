@@ -32,8 +32,8 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .cat-toggle:hover{filter:brightness(.98);}
 .cat-toggle::after{content:'';position:absolute;left:50%;bottom:8px;transform:translateX(-50%);width:16px;height:2px;background:#fff;}
 .cat-toggle:not(.active)::after{width:10px;opacity:.85;}
-.cat-main{display:block;padding:0;color:#fff;font-family:'Barlow',Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.045em;font-size:20px;line-height:.96;margin:0 0 8px 0;}
-.cat-sub{display:block;margin:0;color:rgba(255,255,255,.92);font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;font-size:12px;line-height:1.32;font-weight:500;max-width:100%;letter-spacing:.005em;}
+.cat-main{display:block;padding:0;color:#fff;font-family:'Barlow',Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.045em;font-size:20px;line-height:.96;margin:0;}
+.cat-sub{display:none;}
 .panel{display:block;background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:10px;}
 .panel:not(.open){display:none;}
 .panel.biblio-panel{overflow-y:auto;overflow-x:hidden;}
@@ -122,7 +122,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="bevezetes-panel"><span class="cat-main">BEVEZETÉS</span><span class="cat-sub">Tartalomjegyzék és bevezető fejezet a ClickUp-struktúrának megfelelően.</span></button>
+    <button class="cat-toggle active" data-target="bevezetes-panel"><span class="cat-main">BEVEZETÉS</span></button>
     <div class="panel open" id="bevezetes-panel">
       <a class="item has-status" data-key="tartalomjegyzek" data-status="Szerkesztés alatt" data-filetype="DOC" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Tartalomjegyzék</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
       <a class="item has-status has-subtasks" data-key="bevezetes" data-status="Szerkesztés alatt" data-filetype="DOC" href="https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Bevezetés</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><ul class="subtasks"></ul><div class="progress"></div><div class="chapter-footer"><span>Készültségi állapot</span><span class="chapter-percent"></span></div></a>
@@ -130,7 +130,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="elmelet-panel"><span class="cat-main">ELMÉLET</span><span class="cat-sub">A 2–4. fejezetek hierarchikus szerkezetben, teljesen látható alfejezetekkel.</span></button>
+    <button class="cat-toggle active" data-target="elmelet-panel"><span class="cat-main">ELMÉLET</span></button>
     <div class="panel open" id="elmelet-panel">
       <div class="theory-card has-status has-subchapters" data-key="konyv_fogalmanak_ujrairasa" data-status="Vizualizálás / ábra">
         <div class="theory-card-header">
@@ -159,7 +159,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="leirasok"><span class="cat-main">MŰVÉSZKÖNYV-<br>ELEMZÉSEK</span><span class="cat-sub">A vizsgálati szempontok, az esettanulmányok és az elemzési anyagok a ClickUp szerint.</span></button>
+    <button class="cat-toggle active" data-target="leirasok"><span class="cat-main">ESETTANULMÁNYOK</span></button>
     <div class="panel open" id="leirasok">
       <a class="item has-status" data-key="vizsgalati_szempontok" data-status="Szerkesztés alatt" data-filetype="DOC" href="https://docs.google.com/document/d/1I-BpEzZoF8fPEL3qQZcwqxC3mCt_YoWNJdOUt81vmWs/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Vizsgálati szempontok</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
       <a class="item has-status" data-key="esettanulmany_13" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1Mfy4enbE-J_YPWP2ooFq9Mzcop2VV0HigUD3W1dEilc/mobilebasic" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">13 esettanulmány</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
@@ -169,7 +169,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="modell"><span class="cat-main">MODELL</span><span class="cat-sub">A modell szerkezete, mezőlistái, mappingjei és terminológiai elemei.</span></button>
+    <button class="cat-toggle active" data-target="modell"><span class="cat-main">MODELL</span></button>
     <div class="panel open" id="modell">
       <a class="item has-status" data-key="adatmodell_struktura" data-status="Források ellenőrzése" data-filetype="XLS" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Adatmodell – struktúra</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
       <a class="item has-status" data-key="mezolista_attributumok" data-status="Források ellenőrzése" data-filetype="XLS" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Mezőlista / attribútumok</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
@@ -179,7 +179,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="ontologia"><span class="cat-main">ONTOLÓGIA</span><span class="cat-sub">Az ontológia fejezet és a hozzá tartozó XLS-anyagok a ClickUp szerint.</span></button>
+    <button class="cat-toggle active" data-target="ontologia"><span class="cat-main">ONTOLÓGIA</span></button>
     <div class="panel open" id="ontologia">
       <a class="item has-status" data-key="ontologia_fejezet" data-status="Szerkesztés alatt" href="#" onclick="return false;"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Ontológia fejezet</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
       <a class="item has-status" data-key="ontologiai_mapping" data-status="Témavezetői ellenőrzés" href="https://docs.google.com/spreadsheets/d/1ZL1DUzOMEOb-rxGUxcbVALw_vdJO_9CY7XhxuLCE1io/edit" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Ontológiai mapping</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
@@ -188,7 +188,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="bibliografia"><span class="cat-main">ÖSSZEGZÉS,<br>FORRÁSOK</span><span class="cat-sub">A záró fejezetek és a forrásblokk a jelenlegi ClickUp-struktúrában.</span></button>
+    <button class="cat-toggle active" data-target="bibliografia"><span class="cat-main">ÖSSZEGZÉS</span></button>
     <div class="panel biblio-panel open" id="bibliografia">
       <a class="item has-status" data-key="osszegzes_tavlatok" data-status="Írás" href="#" onclick="return false;"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Összegzés, távlatok</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
       <a class="item has-status" data-key="zaro_gondolatok" data-status="Írás" href="#" onclick="return false;"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Záró gondolatok</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
