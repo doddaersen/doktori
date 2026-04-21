@@ -26,6 +26,7 @@
   },
   "konyv_fogalmanak_ujrairasa": {
     "status": "vizualizálás / ábra",
+    "link": null,
     "subchapters": [
       {
         "number": "2.1.",
@@ -54,6 +55,7 @@
   },
   "melyik_polcra": {
     "status": "vizualizálás / ábra",
+    "link": null,
     "subchapters": [
       {
         "number": "3.1.",
@@ -79,6 +81,7 @@
   },
   "regi_technikak": {
     "status": "szerkesztés",
+    "link": null,
     "subchapters": [
       {
         "number": "4.1.",
