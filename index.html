@@ -64,23 +64,15 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .theory-card{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:12px 12px 11px;transition:.15s;margin-bottom:8px;}
 .theory-card:last-child{margin-bottom:0;}
 .theory-card:hover{border-color:#bcbcbc;}
-.theory-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:10px;}
+.theory-card-header{display:flex;align-items:flex-start;justify-content:space-between;gap:10px;margin-bottom:8px;}
 .theory-doc-link{display:flex;align-items:baseline;gap:6px;min-width:0;flex-wrap:wrap;text-decoration:none;color:inherit;}
+.theory-doc-link .item-title{font-family:'Barlow',Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.035em;}
 .theory-doc-link:hover .item-title{text-decoration:underline;}
-.theory-preview{display:grid;gap:4px;margin-top:2px;}
-.theory-card.expanded .theory-preview{display:none;}
-.theory-preview-line{font-size:12px;line-height:1.35;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.theory-preview-line.is-faded{opacity:.38;}
-.theory-toggle{width:100%;display:flex;align-items:center;justify-content:space-between;gap:12px;border:0;background:transparent;padding:8px 0 0;margin:10px 0 0;border-top:1px solid var(--border);cursor:pointer;color:var(--muted);font:inherit;text-align:left;}
-.theory-toggle-text{font-size:12px;line-height:1.3;}
-.theory-toggle-icon{font-size:14px;line-height:1;transition:transform .18s ease;color:var(--muted);}
-.theory-card.expanded .theory-toggle-icon{transform:rotate(180deg);}
-.theory-subchapters{display:none;margin-top:10px;padding-top:8px;border-top:1px solid var(--border);gap:10px;}
-.theory-card.expanded .theory-subchapters{display:grid;}
+.theory-subchapters{display:grid;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);gap:10px;}
 .theory-subchapter{display:grid;gap:4px;}
-.theory-subchapter-title{font-size:12px;line-height:1.35;font-weight:700;letter-spacing:0;}
-.theory-subchapter-items{display:grid;gap:4px;}
-.theory-subchapter-item{font-size:12px;line-height:1.35;color:var(--text);padding-left:12px;position:relative;}
+.theory-subchapter-title{font-size:12px;line-height:1.4;font-weight:700;letter-spacing:0;padding-left:0;text-transform:none;}
+.theory-subchapter-items{display:grid;gap:4px;padding-left:14px;}
+.theory-subchapter-item{font-size:12px;line-height:1.4;color:var(--text);font-weight:400;padding-left:12px;position:relative;text-transform:none;}
 .theory-subchapter-item::before{content:'-';position:absolute;left:0;top:0;color:var(--muted);}
 .theory-status{margin-top:10px;padding-top:8px;border-top:1px solid var(--border);}
 .sticker-card{display:block;position:relative;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);background:#fff;overflow:visible;text-decoration:none;color:inherit;transition:.15s;transform:rotate(-1.5deg);box-shadow:0 4px 10px rgba(0,0,0,.06);height:118px;}
@@ -137,14 +129,12 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   </div>
 
   <div class="column">
-    <button class="cat-toggle active" data-target="elmelet-panel"><span class="cat-main">ELMÉLET</span><span class="cat-sub">A 2–4. fejezet kártyái külön doc linkkel és lenyitható tartalommal.</span></button>
+    <button class="cat-toggle active" data-target="elmelet-panel"><span class="cat-main">ELMÉLET</span><span class="cat-sub">A 2–4. fejezetek hierarchikus szerkezetben, teljesen látható alfejezetekkel.</span></button>
     <div class="panel open" id="elmelet-panel">
       <div class="theory-card has-status has-subchapters" data-key="konyv_fogalmanak_ujrairasa" data-status="Vizualizálás / ábra">
         <div class="theory-card-header">
           <a class="theory-doc-link" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">A könyv fogalmának újraírása</div><span class="file-ext">.doc</span><span class="item-linkout">↗</span></a>
         </div>
-        <div class="theory-preview"></div>
-        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">További alfejezetek</span><span class="theory-toggle-icon">⌄</span></button>
         <div class="theory-subchapters"></div>
         <div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div>
       </div>
@@ -153,8 +143,6 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
         <div class="theory-card-header">
           <a class="theory-doc-link" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">Melyik polcra kerüljenek a művészkönyvek?</div><span class="file-ext">.doc</span><span class="item-linkout">↗</span></a>
         </div>
-        <div class="theory-preview"></div>
-        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">További alfejezetek</span><span class="theory-toggle-icon">⌄</span></button>
         <div class="theory-subchapters"></div>
         <div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div>
       </div>
@@ -163,8 +151,6 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
         <div class="theory-card-header">
           <a class="theory-doc-link" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-title">Régi technikák, új narratívák</div><span class="file-ext">.doc</span><span class="item-linkout">↗</span></a>
         </div>
-        <div class="theory-preview"></div>
-        <button class="theory-toggle" type="button" aria-expanded="false"><span class="theory-toggle-text">További alfejezetek</span><span class="theory-toggle-icon">⌄</span></button>
         <div class="theory-subchapters"></div>
         <div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div>
       </div>
@@ -233,18 +219,6 @@ buttons.forEach(button => {
   });
 });
 
-const theoryToggles = document.querySelectorAll('.theory-toggle');
-theoryToggles.forEach(toggle => {
-  toggle.addEventListener('click', () => {
-    const card = toggle.closest('.theory-card');
-    const expanded = card.classList.toggle('expanded');
-    toggle.setAttribute('aria-expanded', expanded ? 'true' : 'false');
-    const text = toggle.querySelector('.theory-toggle-text');
-    if (text) text.textContent = expanded ? 'Alfejezetek elrejtése' : 'További alfejezetek';
-    updateBibliographyHeight();
-  });
-});
-
 const statusAliases = {
   'Fejezet írása': 'Írás',
   'írás': 'Írás',
@@ -297,16 +271,6 @@ function stripLeadingNumber(value) {
   return value.replace(/^\s*\d+(?:\.\d+)*\.?\s*/u, '').trim();
 }
 
-function renderTheoryPreview(card, record) {
-  const container = card.querySelector('.theory-preview');
-  if (!container || !Array.isArray(record?.subchapters)) return;
-  const titles = record.subchapters.map(subchapter => stripLeadingNumber(subchapter.title || '')).filter(Boolean);
-  const lines = [];
-  if (titles[0]) lines.push(`<div class="theory-preview-line">${titles[0]}</div>`);
-  if (titles[1]) lines.push(`<div class="theory-preview-line is-faded">${titles[1]}</div>`);
-  container.innerHTML = lines.join('');
-}
-
 function renderTheorySubchapters(card, record) {
   const container = card.querySelector('.theory-subchapters');
   if (!container || !Array.isArray(record?.subchapters)) return;
@@ -354,7 +318,6 @@ function renderCard(card, record) {
     }
   }
   if (card.classList.contains('has-subchapters') && record) {
-    renderTheoryPreview(card, record);
     renderTheorySubchapters(card, record);
   }
 }
