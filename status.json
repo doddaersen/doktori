@@ -6,20 +6,96 @@
     "status": "szerkesztés",
     "percent": 33,
     "subtasks": [
-      {"name": "Kutatás célja", "status": "témavezetői ellenőrzés"},
-      {"name": "Módszertan", "status": "témavezetői ellenőrzés"},
-      {"name": "Tézisek EN", "status": "szerkesztés"},
-      {"name": "Tézisek HU", "status": "témavezetői ellenőrzés"}
+      {
+        "name": "Kutatás célja",
+        "status": "témavezetői ellenőrzés"
+      },
+      {
+        "name": "Módszertan",
+        "status": "témavezetői ellenőrzés"
+      },
+      {
+        "name": "Tézisek EN",
+        "status": "szerkesztés"
+      },
+      {
+        "name": "Tézisek HU",
+        "status": "témavezetői ellenőrzés"
+      }
     ]
   },
   "konyv_fogalmanak_ujrairasa": {
-    "status": "vizualizálás / ábra"
+    "status": "vizualizálás / ábra",
+    "subchapters": [
+      {
+        "number": "2.1.",
+        "title": "A KÖNYV KÖNYVSÉGÉRŐL",
+        "items": []
+      },
+      {
+        "number": "2.2.",
+        "title": "A KÖNYVMŰVÉSZETEKTŐL A MŰVÉSZKÖNYVEKIG: TÖRTÉNETI ÉS FOGALMI ÁTTEKINTÉS",
+        "items": [
+          "2.2.1 Könyvművészetek (the book arts)",
+          "2.2.2 Könyv mint művészet (book as art, book art)",
+          "2.2.3 A kódexektől a konceptuális könyvművekig"
+        ]
+      },
+      {
+        "number": "2.3.",
+        "title": "KÖZÖS NEVEZŐN: A MŰVÉSZKÖNYV MEGHATÁROZÁSÁNAK DILEMMÁI",
+        "items": [
+          "2.3.1 Terminológia",
+          "2.3.2 Művészek és teoretikusok meghatározásai",
+          "2.3.3 GLAM intézmények definíciói"
+        ]
+      }
+    ]
   },
   "melyik_polcra": {
-    "status": "vizualizálás / ábra"
+    "status": "vizualizálás / ábra",
+    "subchapters": [
+      {
+        "number": "3.1.",
+        "title": "TUDÁSSZERVEZÉS A DESIGN ÉS A MŰVÉSZET TERÜLETÉN",
+        "items": [
+          "3.1.1 Fogalmi keretek és terminológiai rendszerek",
+          "3.1.2 Intézményi repozitóriumok szerepe a kreatív tudás megőrzésében",
+          "3.1.3 Modellek és szabványok"
+        ]
+      },
+      {
+        "number": "3.2.",
+        "title": "A MŰVÉSZKÖNYVEK FELTÁRÁSÁNAK SAJÁTOS KIHÍVÁSAI",
+        "items": [
+          "3.2.1 Forma és materialitás",
+          "3.2.2 Bibliográfiai azonosítás és dokumentáció",
+          "3.2.3 Szerzőség és alkotói kontextus",
+          "3.2.4 Hozzáférés és kereshetőség",
+          "3.2.5 Digitális reprezentáció és kontextusvesztés"
+        ]
+      }
+    ]
   },
   "regi_technikak": {
-    "status": "vizualizálás / ábra"
+    "status": "szerkesztés",
+    "subchapters": [
+      {
+        "number": "4.1.",
+        "title": "ANYAG, FORMA, SZERKEZET",
+        "items": []
+      },
+      {
+        "number": "4.2.",
+        "title": "PÁRHUZAMOK A RÉGI KÖNYVEK ÉS A MŰVÉSZKÖNYVEK FELDOLGOZÁSÁBAN",
+        "items": []
+      },
+      {
+        "number": "4.3.",
+        "title": "BIBLIOGRÁFIAI MODELLEK ÉS SZABVÁNYOK ADAPTÁLÁSA",
+        "items": []
+      }
+    ]
   },
   "vizsgalati_szempontok": {
     "status": "szerkesztés"
