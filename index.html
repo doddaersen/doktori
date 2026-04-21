@@ -20,7 +20,7 @@
   --status-sources:#FFD150;
   --status-supervisor:#65CCA9;
   --status-done:#458B73;
-  --progress-empty:#ececec;
+  --progress-empty:#f3f3f3;
   --radius:8px;
 }
 *{box-sizing:border-box}
@@ -50,7 +50,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .label{font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase;}
 .status-badge{display:inline-flex;align-items:center;gap:6px;font-size:10px;font-weight:700;line-height:1;text-transform:uppercase;letter-spacing:.04em;padding:5px 7px;border-radius:999px;color:#fff;}
 .status-dot{width:7px;height:7px;border-radius:50%;background:currentColor;box-shadow:0 0 0 1px rgba(255,255,255,.35) inset;}
-.progress{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;width:100%;margin-top:8px;}
+.progress{display:grid;grid-template-columns:repeat(6,1fr);gap:4px;width:100%;margin-top:8px;opacity:.68;}
 .progress-step{height:6px;border-radius:3px;background:var(--progress-empty);}
 .progress-step.filled{background:var(--fill,#000);}
 .subtasks{margin:10px 0 0;padding:0;list-style:none;display:grid;gap:6px;}
@@ -73,8 +73,8 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .theory-subchapter-title{font-size:12px;line-height:1.4;font-weight:700;letter-spacing:0;padding-left:8px;text-transform:none;}
 .theory-subchapter-items{display:grid;gap:4px;padding-left:26px;}
 .theory-subchapter-item{font-size:12px;line-height:1.4;color:var(--text);font-weight:400;padding-left:12px;position:relative;text-transform:none;}
-.theory-subchapter-item::before{content:'-';position:absolute;left:0;top:0;color:var(--muted);}
-.theory-status{margin-top:10px;padding-top:8px;border-top:1px solid var(--border);}
+.theory-subchapter-item::before{content:'-';position:absolute;left:0;top:0;color:#9b9b9b;opacity:.7;}
+.theory-status{margin-top:16px;padding-top:10px;border-top:1px solid var(--border);}
 .sticker-card{display:block;position:relative;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);background:#fff;overflow:visible;text-decoration:none;color:inherit;transition:.15s;transform:rotate(-1.5deg);box-shadow:0 4px 10px rgba(0,0,0,.06);height:118px;}
 .sticker-card:hover{transform:rotate(-1.5deg) translateY(-1px);}
 .sticker-card::before{content:'';position:absolute;inset:0;border-radius:var(--radius);box-shadow:inset 0 1px 0 rgba(255,255,255,.38);pointer-events:none;}
