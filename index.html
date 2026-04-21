@@ -66,10 +66,11 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .group-children{padding-left:18px;border-left:1px solid #e7e7e7;margin-left:6px;}
 .theory-subchapters{margin-top:10px;border-top:1px solid var(--border);padding-top:8px;display:grid;gap:10px;}
 .theory-subchapter{display:grid;gap:4px;}
-.theory-subchapter-title{font-size:12px;line-height:1.35;font-weight:600;text-transform:uppercase;letter-spacing:.03em;}
+.theory-subchapter-title{font-size:12px;line-height:1.35;font-weight:700;letter-spacing:0;}
 .theory-subchapter-items{display:grid;gap:4px;}
 .theory-subchapter-item{font-size:12px;line-height:1.35;color:var(--text);padding-left:12px;position:relative;}
-.theory-subchapter-item::before{content:'–';position:absolute;left:0;top:0;color:var(--muted);}
+.theory-subchapter-item::before{content:'-';position:absolute;left:0;top:0;color:var(--muted);}
+.theory-status{margin-top:10px;padding-top:8px;border-top:1px solid var(--border);}
 .sticker-card{display:block;position:relative;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);background:#fff;overflow:visible;text-decoration:none;color:inherit;transition:.15s;transform:rotate(-1.5deg);box-shadow:0 4px 10px rgba(0,0,0,.06);height:118px;}
 .sticker-card:hover{transform:rotate(-1.5deg) translateY(-1px);}
 .sticker-card::before{content:'';position:absolute;inset:0;border-radius:var(--radius);box-shadow:inset 0 1px 0 rgba(255,255,255,.38);pointer-events:none;}
@@ -126,9 +127,9 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
   <div class="column">
     <button class="cat-toggle active" data-target="elmelet-panel"><span class="cat-main">ELMÉLET</span><span class="cat-sub">A 2–4. fejezet kártyái a teljes fejezet linkjével és információs alfejezeti blokkokkal.</span></button>
     <div class="panel open" id="elmelet-panel">
-      <a class="item has-status has-subchapters" data-key="konyv_fogalmanak_ujrairasa" data-status="Vizualizálás / ábra" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">2. A könyv fogalmának újraírása</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div><div class="theory-subchapters"></div></a>
-      <a class="item has-status has-subchapters" data-key="melyik_polcra" data-status="Vizualizálás / ábra" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">3. Melyik polcra kerüljenek a művészkönyvek?</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div><div class="theory-subchapters"></div></a>
-      <a class="item has-status has-subchapters" data-key="regi_technikak" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">4. Régi technikák, új narratívák</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div><div class="theory-subchapters"></div></a>
+      <a class="item has-status has-subchapters" data-key="konyv_fogalmanak_ujrairasa" data-status="Vizualizálás / ábra" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">A könyv fogalmának újraírása</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="theory-subchapters"></div><div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div></a>
+      <a class="item has-status has-subchapters" data-key="melyik_polcra" data-status="Vizualizálás / ábra" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Melyik polcra kerüljenek a művészkönyvek?</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="theory-subchapters"></div><div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div></a>
+      <a class="item has-status has-subchapters" data-key="regi_technikak" data-status="Szerkesztés alatt" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Régi technikák, új narratívák</div><span class="file-ext">.doc</span></div><span class="item-linkout">↗</span></div><div class="theory-subchapters"></div><div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div></a>
     </div>
   </div>
 
@@ -241,14 +242,20 @@ function applyStatusPalette(palette) {
   if (palette['kész']) root.style.setProperty('--status-done', palette['kész']);
 }
 
+function stripLeadingNumber(value) {
+  if (!value) return '';
+  return value.replace(/^\s*\d+(?:\.\d+)*\.?\s*/u, '').trim();
+}
+
 function renderTheorySubchapters(card, record) {
   const container = card.querySelector('.theory-subchapters');
   if (!container || !Array.isArray(record?.subchapters)) return;
   container.innerHTML = record.subchapters.map(subchapter => {
+    const title = stripLeadingNumber(subchapter.title || '');
     const items = Array.isArray(subchapter.items) && subchapter.items.length
-      ? `<div class="theory-subchapter-items">${subchapter.items.map(item => `<div class="theory-subchapter-item">${item}</div>`).join('')}</div>`
+      ? `<div class="theory-subchapter-items">${subchapter.items.map(item => `<div class="theory-subchapter-item">${stripLeadingNumber(item)}</div>`).join('')}</div>`
       : '';
-    return `<div class="theory-subchapter"><div class="theory-subchapter-title">${subchapter.number} ${subchapter.title}</div>${items}</div>`;
+    return `<div class="theory-subchapter"><div class="theory-subchapter-title">${title}</div>${items}</div>`;
   }).join('');
 }
 
