@@ -1,4 +1,11 @@
 {
+  "status_palette": {
+    "írás": "#F26076",
+    "vizualizálás / ábra": "#FF9760",
+    "szerkesztés": "#FFD150",
+    "témavezetői ellenőrzés": "#65CCA9",
+    "kész": "#458B73"
+  },
   "tartalomjegyzek": {
     "status": "szerkesztés"
   },
