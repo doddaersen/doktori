@@ -76,6 +76,12 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .theory-subchapter-item{font-size:12px;line-height:1.4;color:var(--text);font-weight:400;padding-left:12px;position:relative;text-transform:none;}
 .theory-subchapter-item::before{content:'-';position:absolute;left:0;top:0;color:#9b9b9b;opacity:.7;}
 .theory-status{margin-top:16px;padding-top:10px;border-top:1px solid var(--border);}
+.model-group-box{background:#fff;border:1px solid var(--border);border-radius:var(--radius);padding:12px 12px 11px;margin-bottom:8px;}
+.model-group-box:last-child{margin-bottom:0;}
+.model-group-title{font-family:'Barlow',Arial,Helvetica,sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.035em;font-size:15px;line-height:1.2;margin:0 0 10px 0;}
+.model-inner-cards{display:grid;gap:8px;}
+.model-inner-cards .item{min-height:0;margin-bottom:0;}
+.model-inner-cards .item-title{font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;font-weight:600;font-size:13px;line-height:1.3;letter-spacing:0;text-transform:none;}
 .sticker-card{display:block;position:relative;border:1px solid rgba(0,0,0,.08);border-radius:var(--radius);background:#fff;overflow:visible;text-decoration:none;color:inherit;transition:.15s;transform:rotate(-1.5deg);box-shadow:0 4px 10px rgba(0,0,0,.06);height:118px;}
 .sticker-card:hover{transform:rotate(-1.5deg) translateY(-1px);}
 .sticker-card::before{content:'';position:absolute;inset:0;border-radius:var(--radius);box-shadow:inset 0 1px 0 rgba(255,255,255,.38);pointer-events:none;}
@@ -185,11 +191,13 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
         <div class="theory-status"><div class="meta-row status-meta"></div><div class="progress"></div></div>
       </div>
 
-      <div class="group-label">Adatmodell</div>
-      <div class="group-children">
-        <a class="item has-status" data-key="adatmodell_struktura" data-status="Témavezetői ellenőrzés" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Adatmodell / struktúra</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
-        <a class="item has-status" data-key="terminologiai_szotar" data-status="Témavezetői ellenőrzés" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Terminológiai szótár</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
-        <a class="item has-status" data-key="mezolista_attributumok" data-status="Témavezetői ellenőrzés" href="https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Mezőlista / attribútumok</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
+      <div class="model-group-box">
+        <div class="model-group-title">Adatmodell</div>
+        <div class="model-inner-cards">
+          <a class="item has-status" data-key="adatmodell_struktura" data-status="Témavezetői ellenőrzés" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Adatmodell / struktúra</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
+          <a class="item has-status" data-key="terminologiai_szotar" data-status="Témavezetői ellenőrzés" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Terminológiai szótár</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
+          <a class="item has-status" data-key="mezolista_attributumok" data-status="Témavezetői ellenőrzés" href="https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer"><div class="item-head"><div class="item-title-wrap"><div class="item-title">Mezőlista / attribútumok</div><span class="file-ext">.xls</span></div><span class="item-linkout">↗</span></div><div class="meta-row status-meta"></div><div class="progress"></div></a>
+        </div>
       </div>
     </div>
   </div>
