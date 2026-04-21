@@ -73,8 +73,7 @@ body{margin:0;font-family:'Hanken Grotesk',Inter,Arial,Helvetica,sans-serif;back
 .theory-subchapter{display:grid;gap:4px;position:relative;}
 .theory-subchapter-title{font-size:12px;line-height:1.4;font-weight:700;letter-spacing:0;padding-left:8px;text-transform:none;}
 .theory-subchapter-items{display:grid;gap:4px;padding-left:26px;}
-#elmelet-panel .theory-subchapter-items{max-height:0;opacity:0;overflow:hidden;pointer-events:none;transform:translateY(-2px);transition:max-height .18s ease, opacity .18s ease, transform .18s ease;}
-#elmelet-panel .theory-subchapter:hover .theory-subchapter-items{max-height:240px;opacity:1;pointer-events:auto;transform:translateY(0);}
+#elmelet-panel .theory-subchapter-items{display:none !important;}
 .theory-subchapter-item{font-size:12px;line-height:1.4;color:var(--text);font-weight:400;padding-left:12px;position:relative;text-transform:none;}
 .theory-subchapter-item::before{content:'-';position:absolute;left:0;top:0;color:#9b9b9b;opacity:.7;}
 .theory-status{margin-top:16px;padding-top:10px;border-top:1px solid var(--border);}
