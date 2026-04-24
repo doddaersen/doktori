@@ -1,0 +1,893 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doktori portfólió</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow:wght@600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --magenta:#f72464;
+      --bg:#fafafa;
+      --surface:#ffffff;
+      --text:#1f1f1f;
+      --muted:#6b6b6b;
+      --border:rgba(0,0,0,.035);
+      --line:#f3f3f3;
+      --status-writing:#F26076;
+      --status-editing:#FFD150;
+      --status-visual:#FF9760;
+      --status-sources:#FFD150;
+      --status-supervisor:#65CCA9;
+      --status-done:#458B73;
+      --progress-empty:#f3f3f3;
+      --radius:6px;
+      --shadow:0 4px 10px rgba(0,0,0,.04);
+      --tree:#4e4e4e;
+      --soft-pink:#f8edef;
+    }
+
+    *{ box-sizing:border-box; }
+    html{ scroll-behavior:smooth; }
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      font-family:'Hanken Grotesk', Inter, Arial, Helvetica, sans-serif;
+    }
+    a{
+      color:inherit;
+      text-decoration:none;
+    }
+
+    .page{
+      max-width:1780px;
+      margin:0 auto;
+      padding:24px 12px 40px;
+    }
+
+    .matrix{
+      display:grid;
+      grid-template-columns:repeat(7,minmax(185px,1fr));
+      gap:10px;
+      align-items:start;
+    }
+
+    .column{
+      display:flex;
+      flex-direction:column;
+      gap:8px;
+    }
+
+    .hero-column{
+      grid-column:1;
+      grid-row:1;
+    }
+
+    .top-spacer{
+      grid-column:2 / -1;
+      grid-row:1;
+      min-height:118px;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+    }
+
+    .research-column,
+    .content-column{
+      grid-row:2;
+    }
+
+    .hero-card{
+      display:block;
+      position:relative;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      background:#fff;
+      overflow:hidden;
+      text-decoration:none;
+      color:inherit;
+      transform:none;
+      box-shadow:none;
+      height:118px;
+    }
+
+    .hero-top{
+      background:var(--magenta);
+      color:#fff;
+      padding:8px 12px;
+      height:40px;
+      border-top-left-radius:var(--radius);
+      border-top-right-radius:var(--radius);
+    }
+
+    .hero-top .hello,
+    .hero-top .name-line{
+      display:block;
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      font-size:10px;
+      line-height:1.05;
+    }
+
+    .hero-body{
+      background:#fff;
+      padding:10px 12px 16px;
+      height:calc(100% - 46px);
+      display:flex;
+      flex-direction:column;
+      text-align:center;
+    }
+
+    .hero-name{
+      font-family:'Hanken Grotesk', Inter, Arial, Helvetica, sans-serif;
+      font-weight:700;
+      font-size:19px;
+      line-height:1.05;
+      letter-spacing:-0.03em;
+      color:#111;
+      text-align:center;
+      white-space:nowrap;
+      margin:9px 0 13px 0;
+    }
+
+    .hero-name .phd-wrap{
+      position:relative;
+      display:inline-block;
+      margin-left:2px;
+    }
+
+    .hero-name .phd{
+      color:#bcbcbc;
+    }
+
+    .hero-name .phd-gif{
+      position:absolute;
+      width:16px;
+      height:16px;
+      object-fit:contain;
+      right:-5px;
+      top:-3px;
+      pointer-events:none;
+      opacity:.38;
+    }
+
+    .hero-links{
+      display:flex;
+      gap:12px;
+      align-items:center;
+      flex-wrap:wrap;
+      margin-top:auto;
+    }
+
+    .hero-links a{
+      font-size:11px;
+      color:var(--muted);
+      letter-spacing:.04em;
+      text-transform:uppercase;
+      text-decoration:none;
+    }
+
+    .hero-links a:hover{ color:#000; }
+
+    .hero-bottom{
+      height:6px;
+      background:var(--magenta);
+      border-bottom-left-radius:var(--radius);
+      border-bottom-right-radius:var(--radius);
+    }
+
+    .section-toggle{
+      appearance:none;
+      border:0.5px solid var(--border);
+      background:var(--magenta);
+      border-radius:var(--radius);
+      padding:12px 12px 30px;
+      cursor:pointer;
+      transition:.15s;
+      width:100%;
+      position:relative;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      min-height:118px;
+      text-align:center;
+      box-shadow:none;
+      color:#fff;
+    }
+
+    .section-toggle::after{
+      content:'';
+      position:absolute;
+      left:50%;
+      bottom:12px;
+      width:10px;
+      height:10px;
+      border-right:2px solid #fff;
+      border-bottom:2px solid #fff;
+      transform:translateX(-50%) rotate(45deg);
+    }
+
+    .research-toggle{
+      padding:12px;
+    }
+
+    .research-toggle::after{
+      display:none;
+    }
+
+    .section-toggle:hover{ filter:brightness(.98); }
+
+    .section-label{
+      display:block;
+      width:100%;
+      padding:0;
+      color:#fff;
+      text-align:center;
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-weight:700;
+      text-transform:uppercase;
+      letter-spacing:.045em;
+      font-size:20px;
+      line-height:.96;
+      margin:0;
+    }
+
+    .panel{
+      display:block;
+      background:#fff;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      padding:10px;
+    }
+
+    .panel:not(.open){ display:none; }
+
+    .card,
+    .group-box{
+      background:#fff;
+      border:0.5px solid var(--border);
+      border-radius:var(--radius);
+      padding:12px 12px 11px;
+      transition:.15s;
+      margin-bottom:8px;
+      min-height:118px;
+      display:flex;
+      flex-direction:column;
+    }
+
+    .card:last-child,
+    .group-box:last-child{ margin-bottom:0; }
+    .card:hover{ border-color:rgba(0,0,0,.08); transform:translateY(-1px); }
+
+    .card-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      margin:-12px -12px 6px;
+      padding:12px 12px 10px;
+      background:var(--soft-pink);
+      border-top-left-radius:var(--radius);
+      border-top-right-radius:var(--radius);
+    }
+
+    .title-wrap{
+      display:flex;
+      align-items:baseline;
+      gap:6px;
+      min-width:0;
+      flex-wrap:nowrap;
+    }
+
+    .doc-title,
+    .group-title{
+      font-family:'Barlow', Arial, Helvetica, sans-serif;
+      font-weight:700;
+      display:block;
+      font-size:15px;
+      line-height:1.2;
+      margin:0;
+      text-transform:uppercase;
+      letter-spacing:.035em;
+    }
+
+    .file-ext{
+      font-size:12px;
+      line-height:1;
+      color:var(--muted);
+      white-space:nowrap;
+      flex:0 0 auto;
+    }
+
+    .linkout,
+    .sheet-link .arrow{
+      color:var(--magenta);
+      flex:0 0 auto;
+      font-weight:700;
+      font-size:12px;
+      line-height:1;
+      margin-top:2px;
+    }
+
+    .sublist{
+      display:grid;
+      gap:4px;
+      margin:4px 0 0;
+      padding:0;
+      border-top:none;
+      font-size:14px;
+      line-height:1.38;
+    }
+
+    .subitem,
+    .line-label,
+    .official-label{
+      color:var(--tree);
+      font-size:14px;
+      line-height:1.38;
+      display:grid;
+      grid-template-columns:16px 1fr;
+      align-items:start;
+      column-gap:8px;
+    }
+
+    .subitem{ margin:0; }
+    .line-label,
+    .official-label{ padding-left:14px; }
+
+    .tree-prefix{
+      display:block;
+      width:16px;
+      opacity:.75;
+    }
+
+    .tree-text{
+      display:block;
+      min-width:0;
+    }
+
+    .status-wrap{
+      order:3;
+      margin-top:8px;
+      padding-top:0;
+      border-top:none;
+    }
+
+    .line-item,
+    .official-item{
+      padding:8px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .line-item:first-of-type,
+    .official-item:first-of-type{ padding-top:0; }
+    .line-item:last-child,
+    .official-item:last-child{ border-bottom:0; padding-bottom:0; }
+
+    .line-status-box,
+    .official-status-box{
+      margin-top:6px;
+      padding-left:36px;
+    }
+
+    .status-badge{
+      display:inline-flex;
+      align-items:center;
+      gap:0;
+      font-size:10px;
+      font-weight:700;
+      line-height:1;
+      text-transform:uppercase;
+      letter-spacing:.04em;
+      padding:5px 7px;
+      border-radius:999px;
+      color:#fff;
+    }
+
+    .status-dot{ display:none; }
+
+    .progress{
+      display:grid;
+      grid-template-columns:repeat(6,1fr);
+      gap:4px;
+      width:100%;
+      margin-top:8px;
+      opacity:.68;
+    }
+
+    .line-status-box .progress,
+    .official-status-box .progress{ max-width:165px; }
+
+    .progress-step{
+      height:6px;
+      border-radius:3px;
+      background:var(--progress-empty);
+    }
+
+    .progress-step.filled{ background:var(--fill,#000); }
+
+    .chapter-footer{
+      display:flex;
+      justify-content:flex-end;
+      align-items:center;
+      margin-top:6px;
+      font-size:11px;
+      color:var(--muted);
+    }
+
+    .chapter-footer span:first-child{ display:none; }
+
+    .chapter-percent{
+      font-weight:700;
+      color:var(--text);
+    }
+
+    .muted,
+    .sheet-status{
+      color:var(--muted);
+      font-size:13px;
+      line-height:1.34;
+    }
+
+    .group-title{ margin-bottom:0; }
+
+    .group-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:10px;
+      margin:-12px -12px 10px;
+      padding:12px 12px 10px;
+      background:var(--soft-pink);
+      border-top-left-radius:var(--radius);
+      border-top-right-radius:var(--radius);
+    }
+
+    .sheet-link{
+      display:flex;
+      align-items:baseline;
+      justify-content:space-between;
+      gap:12px;
+      text-decoration:none;
+      color:var(--tree);
+      font-size:14px;
+      line-height:1.38;
+    }
+
+    .status-writing{ background:var(--status-writing); }
+    .status-editing{ background:var(--status-editing); color:#4a4a12; }
+    .status-visual{ background:var(--status-visual); color:#5f2a00; }
+    .status-sources{ background:var(--status-sources); color:#4a4a12; }
+    .status-supervisor{ background:var(--status-supervisor); color:#21472a; }
+    .status-done{ background:var(--status-done); }
+
+    @media (max-width:1560px){
+      .matrix{ grid-template-columns:repeat(4,minmax(220px,1fr)); }
+      .page{ max-width:1280px; }
+      .hero-column,
+      .top-spacer,
+      .research-column,
+      .content-column{
+        grid-column:auto;
+        grid-row:auto;
+      }
+      .top-spacer{ display:none; }
+    }
+
+    @media (max-width:980px){
+      .page{ padding:24px 14px 40px; }
+      .matrix{ grid-template-columns:repeat(2,minmax(180px,1fr)); }
+    }
+
+    @media (max-width:560px){
+      .matrix{ grid-template-columns:1fr; }
+      .section-toggle{ min-height:118px; }
+      .hero-card{ height:auto; min-height:118px; }
+      .hero-body{ height:auto; min-height:70px; }
+      .card{ min-height:unset; }
+      .title-wrap{ flex-wrap:nowrap; }
+      .file-ext{ white-space:nowrap; }
+    }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <div class="matrix">
+      <div class="column hero-column">
+        <div class="hero-card">
+          <div class="hero-top">
+            <span class="hello">HELLO</span>
+            <span class="name-line">MY NAME IS</span>
+          </div>
+          <div class="hero-body">
+            <div class="hero-name">
+              <span>Dorottya Kun</span>
+              <span class="phd-wrap">
+                <img class="phd-gif" src="https://media1.tenor.com/m/Pq1cZiuhlEEAAAAC/rajinikanth.gif" alt="">
+                <span class="phd">PhD</span>
+              </span>
+            </div>
+            <div class="hero-links">
+              <a href="https://docs.google.com/document/d/18FXVh4BCtGTkoiGdQIMt8iZiftQctT3OUiI9afmVnI0/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">CV</a>
+              <a href="#kontakt">Kontakt</a>
+            </div>
+          </div>
+          <div class="hero-bottom"></div>
+        </div>
+      </div>
+
+      <div class="top-spacer" aria-hidden="true"></div>
+
+      <div class="column research-column">
+        <button class="section-toggle research-toggle active" data-target="kutatas-panel"><span class="section-label">A KUTATÁS</span></button>
+        <div class="panel open" id="kutatas-panel">
+          <article class="group-box">
+            <div class="line-item">
+              <div class="line-label">↳ a művészkönyvek könyvtári tudásreprezentációjáról szól</div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="column content-column">
+        <button class="section-toggle active" data-target="bevezetes-panel"><span class="section-label">BEVEZETÉS</span></button>
+        <div class="panel open" id="bevezetes-panel">
+          <a class="card" href="https://docs.google.com/document/d/1F6q8F76mbulV_72u_h4EMSwgIAIQt7ZVpAQMvUgZeRE/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">TARTALOMJEGYZÉK</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="status-wrap" data-status-target="tartalomjegyzek"></div>
+          </a>
+
+          <a class="card" href="https://docs.google.com/document/d/11AmnHI4KuBlvCmqBUs6-oy5JdU-uj7W-lgc-LD62dfU/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">BEVEZETÉS</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="sublist" id="bevezetes-subtasks"></div>
+            <div class="chapter-footer"><span>Készültségi állapot</span><span class="chapter-percent" data-percent-target="bevezetes"></span></div>
+            <div class="status-wrap" data-status-target="bevezetes"></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="column content-column">
+        <button class="section-toggle active" data-target="elmelet-panel"><span class="section-label">ELMÉLET</span></button>
+        <div class="panel open" id="elmelet-panel">
+          <a class="card" href="https://docs.google.com/document/d/1bJntt0aP4zoG_xikmvwsJpbJOXDjO0Ckel-L0IXPWTQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">A KÖNYV FOGALMÁNAK ÚJRAÍRÁSA</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="sublist">
+              <div class="subitem">↳ A könyv könyvségéről</div>
+              <div class="subitem">↳ Könyvművészetektől a művészkönyvekig: történeti és fogalmi áttekintés</div>
+              <div class="subitem">↳ Közös nevezőn: a művészkönyv meghatározásának dilemmái</div>
+            </div>
+            <div class="status-wrap" data-status-target="konyv_fogalmanak_ujrairasa"></div>
+          </a>
+
+          <a class="card" href="https://docs.google.com/document/d/1lpZIcyKgB2-T1dI2t21etthyG7IH7nv_R7pQkzaxWWw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">MELYIK POLCRA KERÜLJENEK A MŰVÉSZKÖNYVEK?</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="sublist">
+              <div class="subitem">↳ Tudásszervezés a design és a művészet területén</div>
+              <div class="subitem">↳ A művészkönyvek feltárásának sajátos kihívásai</div>
+            </div>
+            <div class="status-wrap" data-status-target="melyik_polcra"></div>
+          </a>
+
+          <a class="card" href="https://docs.google.com/document/d/1ewg2d_bMeZrui9l-LokSImr9x5dr_qnwa6KB5zlrTnw/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">RÉGI TECHNIKÁK, ÚJ NARRATÍVÁK</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="sublist">
+              <div class="subitem">↳ Anyag, forma, szerkezet</div>
+              <div class="subitem">↳ Párhuzamok a régi könyvek és a művészkönyvek feldolgozásában</div>
+              <div class="subitem">↳ Bibliográfiai modellek és szabványok adaptálása</div>
+            </div>
+            <div class="status-wrap" data-status-target="regi_technikak"></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="column content-column">
+        <button class="section-toggle active" data-target="esettanulmanyok-panel"><span class="section-label">ESETTANULMÁNYOK</span></button>
+        <div class="panel open" id="esettanulmanyok-panel">
+          <a class="card" href="https://docs.google.com/document/d/1I-BpEzZoF8fPEL3qQZcwqxC3mCt_YoWNJdOUt81vmWs/edit?usp=drivesdk" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">TIZENHÁROM MŰVÉSZKÖNYV ELEMZÉSE</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="sublist">
+              <div class="subitem">↳ 13 esettanulmány</div>
+              <div class="subitem">↳ Elemzés, kihívások azonosítása</div>
+              <div class="subitem">↳ Kategorizálási szempontok</div>
+            </div>
+            <div class="status-wrap" data-status-target="vizsgalati_szempontok"></div>
+          </a>
+        </div>
+      </div>
+
+      <div class="column content-column">
+        <button class="section-toggle active" data-target="modell-panel"><span class="section-label">MODELL</span></button>
+        <div class="panel open" id="modell-panel">
+          <a class="card" href="https://docs.google.com/document/d/15rEBwdNXIpPIF0aV-otxoagjN67ogJ7wg2wsEpSvlg8/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">MŰVÉSZKÖNYV METAADATMODELL: JAVASLAT GYŰJTEMÉNYI LEÍRÁSRA</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="status-wrap" data-status-target="adatmodell_javaslat"></div>
+          </a>
+
+          <article class="group-box">
+            <div class="group-head">
+              <div class="title-wrap"><h3 class="group-title">ADATMODELL</h3><span class="file-ext">.xls</span></div>
+              <span class="linkout">↗</span>
+            </div>
+
+            <div class="line-item">
+              <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1RKhpiXYJ2p-Uj8Ru4dxih3w9XGDNUey2-RhtvvWEuUg/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <span class="line-label">↳ 13 művészkönyv - mintaadatok .xls</span><span class="arrow">↗</span>
+              </a>
+              <div class="sheet-status line-status-box" data-status-line="adatmodell_struktura"></div>
+            </div>
+
+            <div class="line-item">
+              <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1U0zy34q7uEbvOQ-bO1sJGNpxjH0OyYTDTQiYrNavRUQ/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <span class="line-label">↳ Terminológiai szótár .xls</span><span class="arrow">↗</span>
+              </a>
+              <div class="sheet-status line-status-box" data-status-line="terminologiai_szotar"></div>
+            </div>
+
+            <div class="line-item">
+              <a class="sheet-link" href="https://docs.google.com/spreadsheets/d/1-HJLveKob13v3S-Dwkl5k8qLXWO-TlexUVVaOG8n1Fc/edit?usp=drive_link" target="_blank" rel="noopener noreferrer">
+                <span class="line-label">↳ Mezőlista / attribútumok .xls</span><span class="arrow">↗</span>
+              </a>
+              <div class="sheet-status line-status-box" data-status-line="mezolista_attributumok"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="column content-column">
+        <button class="section-toggle active" data-target="ontologia-panel"><span class="section-label">ONTOLÓGIA</span></button>
+        <div class="panel open" id="ontologia-panel">
+          <a class="card" href="#" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">SZEMANTIKUS MODELLEZÉS ÉS ONTOLÓGIAI MEGKÖZELÍTÉS</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="status-wrap" data-status-target="ontologia_fejezet"></div>
+          </a>
+
+          <article class="group-box">
+            <div class="group-head">
+              <div class="title-wrap"><h3 class="group-title">ONTOLÓGIA</h3><span class="file-ext">.xls</span></div>
+              <span class="linkout">↗</span>
+            </div>
+
+            <div class="line-item">
+              <a class="sheet-link" href="#" target="_blank" rel="noopener noreferrer">
+                <span class="line-label">↳ Mapping xls</span><span class="arrow">↗</span>
+              </a>
+              <div class="sheet-status line-status-box" data-status-line="ontologiai_mapping"></div>
+            </div>
+
+            <div class="line-item">
+              <a class="sheet-link" href="#" target="_blank" rel="noopener noreferrer">
+                <span class="line-label">↳ Szótár xls</span><span class="arrow">↗</span>
+              </a>
+              <div class="sheet-status line-status-box" data-status-line="szotarak_xls"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+
+      <div class="column content-column">
+        <button class="section-toggle active" data-target="osszegzes-panel"><span class="section-label">ÖSSZEGZÉS</span></button>
+        <div class="panel open" id="osszegzes-panel">
+          <a class="card" href="#" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">ÖSSZEGZÉS, TÁVLATOK</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="status-wrap" data-status-target="osszegzes_tavlatok"></div>
+          </a>
+
+          <a class="card" href="#" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">ZÁRÓ GONDOLATOK</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="status-wrap" data-status-target="zaro_gondolatok"></div>
+          </a>
+
+          <a class="card" href="#" target="_blank" rel="noopener noreferrer">
+            <div class="card-head">
+              <div class="title-wrap"><h3 class="doc-title">KÖSZÖNETNYILVÁNÍTÁS</h3><span class="file-ext">.doc</span></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="status-wrap" data-status-target="koszonetnyilvanitas"></div>
+          </a>
+
+          <article class="group-box">
+            <div class="group-head">
+              <div class="title-wrap"><h3 class="group-title">FORRÁSOK</h3></div>
+              <span class="linkout">↗</span>
+            </div>
+            <div class="line-item">
+              <div class="line-status-box" data-status-line="forrasok"></div>
+            </div>
+          </article>
+
+          <article class="group-box">
+            <div class="group-head">
+              <div class="title-wrap"><h3 class="group-title">HIVATALOS</h3></div>
+              <span class="linkout">↗</span>
+            </div>
+
+            <div class="official-item">
+              <div class="official-label">↳ Szakmai életút</div>
+              <div class="official-status-box" data-status-line="szakmai_eletut"></div>
+            </div>
+
+            <div class="official-item">
+              <div class="official-label">↳ Publikációs jegyzék MTMT alapján</div>
+              <div class="official-status-box" data-status-line="publikacios_jegyzek"></div>
+            </div>
+
+            <div class="official-item">
+              <div class="official-label">↳ Eredetiség-nyilatkozat</div>
+              <div class="official-status-box" data-status-line="eredetisegi_nyilatkozat"></div>
+            </div>
+
+            <div class="official-item">
+              <div class="official-label">↳ Témavezetői nyilatkozat</div>
+              <div class="official-status-box" data-status-line="temavezeto_nyilatkozat"></div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </div>
+
+    <div id="kontakt"></div>
+  </main>
+
+  <script>
+    const buttons = document.querySelectorAll('.section-toggle');
+    buttons.forEach(button => {
+      button.addEventListener('click', () => {
+        const target = document.getElementById(button.dataset.target);
+        if (!target) return;
+        const isOpen = target.classList.contains('open');
+        target.classList.toggle('open');
+        button.classList.toggle('active', !isOpen);
+      });
+    });
+
+    const statusAliases = {
+      'Fejezet írása': 'Írás',
+      'írás': 'Írás',
+      'Írás': 'Írás',
+      'Szerkesztés alatt': 'Szerkesztés alatt',
+      'szerkesztés alatt': 'Szerkesztés alatt',
+      'Szerkesztés': 'Szerkesztés',
+      'szerkesztés': 'Szerkesztés',
+      'Vizualizálás / ábra': 'Vizualizálás / ábra',
+      'vizualizálás / ábra': 'Vizualizálás / ábra',
+      'Források ellenőrzése': 'Források ellenőrzése',
+      'források ellenőrzése': 'Források ellenőrzése',
+      'Témavezetői ellenőrzés': 'Témavezetői ellenőrzés',
+      'témavezetői ellenőrzés': 'Témavezetői ellenőrzés',
+      'Kész': 'Kész',
+      'kész': 'Kész'
+    };
+
+    const statusConfig = {
+      'Írás': { className:'status-writing', label:'Írás', color:'var(--status-writing)', order:1 },
+      'Szerkesztés': { className:'status-editing', label:'Szerkesztés', color:'var(--status-editing)', order:2 },
+      'Szerkesztés alatt': { className:'status-editing', label:'Szerkesztés alatt', color:'var(--status-editing)', order:2 },
+      'Vizualizálás / ábra': { className:'status-visual', label:'Vizualizálás / ábra', color:'var(--status-visual)', order:3 },
+      'Források ellenőrzése': { className:'status-sources', label:'Források ellenőrzése', color:'var(--status-sources)', order:4 },
+      'Témavezetői ellenőrzés': { className:'status-supervisor', label:'Témavezetői ellenőrzés', color:'var(--status-supervisor)', order:5 },
+      'Kész': { className:'status-done', label:'Kész', color:'var(--status-done)', order:6 }
+    };
+
+    const orderedStatuses = ['Írás','Szerkesztés','Vizualizálás / ábra','Források ellenőrzése','Témavezetői ellenőrzés','Kész'];
+
+    function normalizeStatus(value) {
+      return statusAliases[value] || value;
+    }
+
+    function progressMarkup(config) {
+      return `
+        <div class="progress">
+          ${orderedStatuses.map((_, index) => `
+            <span class="progress-step ${index < config.order ? 'filled' : ''}" style="--fill:${config.color}"></span>
+          `).join('')}
+        </div>
+      `;
+    }
+
+    function badgeMarkup(config) {
+      return `
+        <span class="status-badge ${config.className}">
+          <span class="status-dot"></span>
+          ${config.label}
+        </span>
+      `;
+    }
+
+    function renderStatusBlock(node, value) {
+      const normalized = normalizeStatus(value);
+      const config = statusConfig[normalized];
+      if (!node || !config) return;
+      node.innerHTML = badgeMarkup(config) + progressMarkup(config);
+    }
+
+    function renderStatusLine(node, value) {
+      const normalized = normalizeStatus(value);
+      const config = statusConfig[normalized];
+      if (!node) return;
+      if (config) {
+        node.innerHTML = badgeMarkup(config) + progressMarkup(config);
+      } else if (normalized) {
+        node.textContent = normalized;
+      }
+    }
+
+    function formatTreeItems() {
+      document.querySelectorAll('.subitem, .line-label, .official-label').forEach(node => {
+        const raw = node.textContent.trim();
+        const match = raw.match(/^(↳)\s*(.*)$/);
+        if (!match) return;
+        node.innerHTML = `<span class="tree-prefix">${match[1]}</span><span class="tree-text">${match[2]}</span>`;
+      });
+    }
+
+    function renderBevezetesSubtasks(subtasks) {
+      const container = document.getElementById('bevezetes-subtasks');
+      if (!container || !Array.isArray(subtasks)) return;
+      container.innerHTML = subtasks.map(item => `<div class="subitem">↳ ${item.name}</div>`).join('');
+    }
+
+    function renderPercent(key, value) {
+      const node = document.querySelector(`[data-percent-target="${key}"]`);
+      if (!node || typeof value === 'undefined') return;
+      node.textContent = `${value}%`;
+    }
+
+    fetch('status.json')
+      .then(response => response.ok ? response.json() : Promise.reject(new Error('status.json not found')))
+      .then(data => {
+        Object.entries(data.cards || {}).forEach(([key, value]) => {
+          renderStatusBlock(document.querySelector(`[data-status-target="${key}"]`), value.status);
+          if (typeof value.percent !== 'undefined') renderPercent(key, value.percent);
+        });
+
+        Object.entries(data.lines || {}).forEach(([key, value]) => {
+          renderStatusLine(document.querySelector(`[data-status-line="${key}"]`), value.status);
+        });
+
+        if (data.cards?.bevezetes?.subtasks) {
+          renderBevezetesSubtasks(data.cards.bevezetes.subtasks);
+        }
+
+        formatTreeItems();
+      })
+      .catch(() => {
+        formatTreeItems();
+      });
+  </script>
+</body>
+</html>
